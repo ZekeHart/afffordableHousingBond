@@ -7,7 +7,7 @@
     :reveal="layoutStore.reveal"
     :left-class="{'bg-grey-2': true}"
   >
-    <div class="header" slot="header">
+    <!-- <div class="header" slot="header">
       <div class="headimage">
         <img src="~assets/affordablehousing.png" alt="Banner" class="banner">
       </div>
@@ -30,15 +30,15 @@
           </q-btn>
         </q-toolbar>
       </div>
-    </div>
+    </div> -->
 
-    <div slot="left">
+    <!-- <div slot="left">
       <!--
         Use <q-side-link> component
         instead of <q-item> for
         internal vue-router navigation
       -->
-      <q-list no-border link inset-delimiter>
+      <!-- <q-list no-border link inset-delimiter>
         <q-list-header>Affordable Housing Menu</q-list-header>
         <q-item>
           <a href='#/'>
@@ -51,13 +51,14 @@
           </q-side-link>
         </q-item>
       </q-list>
-    </div>
+    </div> --> 
     <!-- Don't drop "q-app" class -->
     <div id="q-app">
-      <router-view></router-view>
+      <testHeader />
+      <mapCartogram />
     </div>
 
-    <q-toolbar slot="footer">
+    <!-- <q-toolbar slot="footer">
       <q-toolbar-title>
         <div slot="subtitle">
           <a href='http://quasar-framework.org'>Running on Quasar, </a>
@@ -65,13 +66,15 @@
           <a href='http://www.django-rest-framework.org/'>and Django Rest Framework</a>
         </div>
       </q-toolbar-title>
-    </q-toolbar>
+    </q-toolbar> -->
   </q-layout>
 </template>
 
 <script>
 import layoutStore from './store/layout'
 import { routes } from 'router/graphs'
+import mapCartogram from 'src/components/graphs/durhamtrts-map/index.vue'
+import testHeader from 'src/components/Headers.vue'
 
 import {
   QLayout,
@@ -98,7 +101,9 @@ export default {
     QListHeader,
     QItem,
     QItemMain,
-    QSideLink
+    QSideLink,
+    mapCartogram,
+    testHeader
   },
   data () {
     const v = layoutStore.view

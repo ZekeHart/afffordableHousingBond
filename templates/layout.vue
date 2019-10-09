@@ -1,7 +1,7 @@
 <template>
   <!-- Configure "view" prop for QLayout -->
   <q-layout>
-    <q-toolbar slot="header">
+    <!-- <q-toolbar slot="header">
       <!-- opens drawer below
       <button class="hide-on-drawer-visible" @click="$refs.drawer.open()">
         <i>menu</i>
@@ -10,7 +10,7 @@
       <q-toolbar-title>
         Title
       </q-toolbar-title>
-    </q-toolbar>
+    </q-toolbar> -->
 
     <!-- Navigation Tabs
     <q-tabs slot="navigation">

@@ -163,7 +163,7 @@ export default {
         let hi = 5198.12
 
         // let colorScale = d3.scaleLinear()
-        let colorScale = d3.scaleSequential(d3Chromatic.interpolatePuOr)
+        let colorScale = d3.scaleSequential(d3Chromatic.interpolateRdBu)
           .domain([lo, hi])
 
         mounthis.durhamtrts.transition()
@@ -253,11 +253,11 @@ export default {
       let hi = parseFloat(voptions.hi)
 
       if (propval[0].value !== 'pccol0016') {
-        var colorScale = d3.scaleSequential(d3Chromatic.interpolatePuOr)
+        var colorScale = d3.scaleSequential(d3Chromatic.interpolateRdBu)
           .domain([lo, hi])
       }
       else if (propval[0].value === 'pccol0016') {
-        colorScale = d3.scaleSequential(d3Chromatic.interpolatePuOr)
+        colorScale = d3.scaleSequential(d3Chromatic.interpolateRdBu)
           .domain([lo, hi])
       }
 
@@ -326,6 +326,7 @@ export default {
   pointer-events: all;
 }
 .muniboundary {
+  display: none;
   stroke: gray;
   fill: lightgray;
 }
@@ -338,24 +339,27 @@ export default {
   stroke: #98999b;
 }
 .roads {
-  fill: none;
+  display: none;
+  /* fill: none;
   stroke: white;
   stroke-linejoin: round;
-  stroke-linecap: round;
+  stroke-linecap: round; */
 }
 .major_road {
-  fill: none;
+  display: none;
+  /* fill: none;
   stroke: #fb7b7a;
   stroke-width: 1px;
   stroke-linejoin: round;
-  stroke-linecap: round;
+  stroke-linecap: round; */
 }
 .minor_road {
-  fill: none;
+  display: none;
+  /* fill: none;
   stroke: #999;
   stroke-width: 0.5px;
   stroke-linejoin: round;
-  stroke-linecap: round;
+  stroke-linecap: round; */
 }
 .highway {
   fill: none;
@@ -365,6 +369,7 @@ export default {
   stroke-linecap: round;
 }
 .rail {
+  display: none;
   fill: none;
   stroke: #503D3F;
   stroke-width: 0.5px;
@@ -372,6 +377,7 @@ export default {
   stroke-linecap: round;
 }
 .path {
+  display: none;
   fill: none;
   stroke: brown;
   stroke-width: 0.5px;
