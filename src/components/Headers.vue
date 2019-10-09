@@ -1,13 +1,13 @@
 <template>
     <header class='header'>
         <nav class='navBar'>
-            <ul>
-                <li class='navOptions'><img class='logo' src='https://bean-project-screenshots.s3.amazonaws.com/c4d_logo-2.png' alt='Code for Durham logo'/></li>
-                <li class='navOptions'><a href='#lorem'>Code for Durham</a></li>
-                <li class='navOptions'><a href='#ipsum'>Ipsum</a></li>
-                <li class='navOptions'><a href='#dolor'>Dolor</a></li>
-                <li class='navOptions'><a href='#sit'>Sit</a></li>
-                <li class='navOptions'><a href='#amet'>Amet</a></li>
+            <ul class='ulNav'>
+                <li><a class='navOptions' href='#lorem'>Code for Durham</a></li>
+                <li><img class='logo' src='https://bean-project-screenshots.s3.amazonaws.com/c4d_logo-2.png' alt='Code for Durham logo'/></li>
+                <li><a class='navOptions' href='#ipsum'>Ipsum</a></li>
+                <li><a class='navOptions' href='#dolor'>Dolor</a></li>
+                <li><a class='navOptions' href='#sit'>Sit</a></li>
+                <li><a class='navOptions' href='#amet'>Amet</a></li>
             </ul>
         </nav>
     </header>
@@ -20,10 +20,10 @@
 $play: 'Playfair Display', serif; */
 
 .header {
-    padding-bottom: 20vh;
+    padding-bottom: 50vh;
 }
 .logo {
-    height: 20vh;
+    height: 15vh;
     border-radius: 50%;
 }
 
@@ -34,6 +34,27 @@ $play: 'Playfair Display', serif; */
     height: 12vh;
     position: fixed;
     z-index: 99;
+}
+
+
+.navOptions {
+    margin: auto;
+    color: #fff;
+    font-size: 1rem;
+    border-bottom: .1rem solid #fff;
+    font-family: 'Lato', sans-serif;
+    text-transform: uppercase;
+}
+
+
+.ulNav {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+
+.textContainer {
+    margin: auto;
 }
 /* * {
     box-sizing: border-box;
