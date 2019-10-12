@@ -150,23 +150,4 @@ export default {
 }
 </script>
 <style src="vue-scrollama/dist/vue-scrollama.css" >
-.scrollama-container {
-  display: grid;
-  grid-template-areas:
-    "graphic text";
-}
-  
-  .scrollama-graphic {
-    grid-area: text;
-    height: 80vh;
-    top: 10vh;
-  }
-.mainContainer {
-    display: grid;
-    justify-content: center;
-}
-
-.textContainer {
-    margin: auto;
-}
 </style>

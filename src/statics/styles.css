@@ -1,0 +1,18 @@
+.scrollama-container {
+    display: grid;
+    grid-template-areas:
+      "graphic text";
+  }
+  .scrollama-graphic {
+      grid-area: text;
+      height: 80vh;
+      top: 10vh;
+    }
+  .mainContainer {
+      display: grid;
+      justify-content: center;
+  }
+  
+  .textContainer {
+      margin: auto;
+  }
