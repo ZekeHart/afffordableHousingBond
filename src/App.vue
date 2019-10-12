@@ -18,6 +18,7 @@
       <mapCartogram />
       </section>
           <section class='textContainer' id='lorem'>
+            <button v-bind:joey='test'></button>
             <h3 id='lorem-title' class='title'>Lorem</h3>
 
             <p class='text'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid cumque non quaerat vitae animi? Assumenda nostrum alias corporis fugiat facilis vero ducimus, beatae aliquam, in perferendis, consectetur saepe unde velit. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid cumque non quaerat vitae animi? Assumenda nostrum alias corporis fugiat facilis vero ducimus, beatae aliquam, in perferendis, consectetur saepe unde velit.</p>
@@ -57,6 +58,12 @@ import 'intersection-observer'
 import Scrollama from 'vue-scrollama'
 import Conclusion from 'src/components/Conclusion.vue'
 
+function load (component) {
+  return () => import(`src/${component}.vue`)
+}
+
+const map = load('components/graphs/durhamtrts-map/mapcartogram')
+
 import {
   QLayout,
   QToolbar,
@@ -87,7 +94,8 @@ export default {
     mapCartogram,
     Conclusion,
     Intro,
-    Header
+    Header,
+    map: map
   },
   data () {
     const v = layoutStore.view
@@ -95,7 +103,8 @@ export default {
       layoutStore,
       items: routes,
       layoutvals: v,
-      isActive: false
+      isActive: false,
+      test: 'blue'
     }
   },
   methods: {

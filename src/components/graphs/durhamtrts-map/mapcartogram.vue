@@ -231,11 +231,14 @@ export default {
         }).remove()
     })
   },
-  props: ['propval', 'initialVal'],
+  props: ['propval', 'joey'],
   watch: {
     // Retrieve new property value from select in index.html
     propval: function (newPropVal) {
       this.changeTrtsPropVal(newPropVal)
+    },
+    joey: function (joey) {
+      console.log(joey)
     }
   },
   methods: {
