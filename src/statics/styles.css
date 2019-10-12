@@ -4,6 +4,8 @@
       "graphic text";
   }
   .scrollama-graphic {
+      padding-top: 10vh;
+      margin-right: 10vh;
       grid-area: text;
       height: 80vh;
       top: 10vh;
@@ -15,4 +17,5 @@
   
   .textContainer {
       margin: auto;
+      max-width: 60%;
   }

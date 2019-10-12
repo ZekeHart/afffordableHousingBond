@@ -157,10 +157,10 @@ export default {
             return d.id
           })
 
-        let value = function (d) { return +d.properties['pop70'] }
+        let value = function (d) { return +d.properties['pcnhwht0016'] }
 
-        let lo = 223.11
-        let hi = 5198.12
+        let lo = -100
+        let hi = 100
 
         // let colorScale = d3.scaleLinear()
         let colorScale = d3.scaleSequential(d3Chromatic.interpolateRdBu)
@@ -231,7 +231,7 @@ export default {
         }).remove()
     })
   },
-  props: ['propval'],
+  props: ['propval', 'initialVal'],
   watch: {
     // Retrieve new property value from select in index.html
     propval: function (newPropVal) {

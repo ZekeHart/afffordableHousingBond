@@ -13,7 +13,7 @@ Data:
         <div class="row">
           <div class="col-9">
             <div class='mapHolder'>
-              <durham-map v-bind:propval='pushSelect'
+              <durham-map initialVal='pop80' v-bind:propval='pushSelect'
                 v-on:durhamtrSelected='onDurhamtrSelected'
                 v-on:durhamtrDeselected='onDurhamtrDeselected'
               />

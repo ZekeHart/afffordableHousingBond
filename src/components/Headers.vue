@@ -20,7 +20,7 @@
 $play: 'Playfair Display', serif; */
 
 .header {
-    padding-bottom: 50vh;
+    padding-bottom: 15vh;
 }
 .logo {
     height: 15vh;
