@@ -10,53 +10,52 @@ Data:
 -->
 <template>
 <div class="mainContainer">
-  <Scrollama @step-enter="stepEnterHandler"
-        :debug="true">
-        <section class='mapImg'  slot='graphic'>
-      <div class='holder'>
-        <strong>Percent Change in White Population 2000-2016</strong>
-        <div class="row">
-          <div class="col-9">
-            <div class='mapHolder'>
-              <durham-map v-bind:propval='pushSelect'
-              v-bind:joey='testButton'
-                v-on:durhamtrSelected='onDurhamtrSelected'
-                v-on:durhamtrDeselected='onDurhamtrDeselected'
+  <Scrollama @step-enter="stepEnterHandler">
+      <div class='mapImg'  slot='graphic'>
+        <div class='holder'>
+          <strong>Percent Change in White Population 2000-2016</strong>
+          <div class="row">
+            <div class="col-9">
+              <div class='mapHolder'>
+                <durham-map v-bind:propval='pushSelect'
+                v-bind:scrollVal='scrollVal'
+                  v-on:durhamtrSelected='onDurhamtrSelected'
+                  v-on:durhamtrDeselected='onDurhamtrDeselected'
+                />
+              </div>
+            </div>
+            <div class="col-3">
+              <tooltip v-if='currentDurhamtr'
+                v-bind:title='currentDurhamtrTitle'
+                v-bind:description='currentDurhamtrDescription'
               />
             </div>
           </div>
-          <div class="col-3">
-            <tooltip v-if='currentDurhamtr'
-              v-bind:title='currentDurhamtrTitle'
-              v-bind:description='currentDurhamtrDescription'
-            />
-          </div>
-        </div>
+      </div>
     </div>
-      </section>
-          <section class='textContainer' id='lorem'>
-            <button v-on:click='changeJoey'>tset button</button>
-            <h3 id='lorem-title' class='title'>Lorem</h3>
+        <div class='step textContainer' id='lorem'  data-step-no="pop70">
+          <button v-on:click='changeJoey'>tset button</button>
+          <h3 id='lorem-title' class='title'>Lorem</h3>
 
-            <p class='text'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid cumque non quaerat vitae animi? Assumenda nostrum alias corporis fugiat facilis vero ducimus, beatae aliquam, in perferendis, consectetur saepe unde velit. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid cumque non quaerat vitae animi? Assumenda nostrum alias corporis fugiat facilis vero ducimus, beatae aliquam, in perferendis, consectetur saepe unde velit.</p>
-        </section>
+          <p class='text'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid cumque non quaerat vitae animi? Assumenda nostrum alias corporis fugiat facilis vero ducimus, beatae aliquam, in perferendis, consectetur saepe unde velit. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid cumque non quaerat vitae animi? Assumenda nostrum alias corporis fugiat facilis vero ducimus, beatae aliquam, in perferendis, consectetur saepe unde velit.</p>
+      </div>
 
-        <section class='textContainer' id='ipsum'>
-            <h3 class='title'>Ipsum</h3>
+      <div class='step textContainer' id='ipsum' data-step-no="pop80">
+          <h3 class='title'>Ipsum</h3>
 
-            <p class='text'>Fixie dirty durham consensus big green wall beaver queen sustainable urban ministries dapper, broad street wool e bull old north innovation bowtie maker, southsquare historic preservation maker full frame sodu the buehler. The bulls hipster blues major sodu duke chapel dino trail eagles, major the state of things ninth street miami boulevard diy. Durham goldenbelt duke park local erwin road saint joseph's, start-up adf miami boulevard bulltown strutters ccb plaza french press, erwin terrace the double nickel merge records elf. Angier drive medicine dance the indy one forty seven train arm wrestling, duke chapel university science and math partner erwin square black wall street major, seventy french press dance dur'm 15-501. Blue devils bouncing bulldogs third fridays the double nickel chapel drive beer doughman seventy west village wunc, northeast central luewwd hipster hub coworking erwin square authentic innovation. Seeds the buehler oprah building walltown arm wrestling historic preservation local, blackwell urban ministries old north the kress historic preservation doughman, trinity park foodie bay 7 eno river bragtown.</p>
-        </section>
-        <section class='textContainer' id='lorem'>
-            <h3 id='lorem-title' class='title'>Lorem</h3>
+          <p class='text'>Fixie dirty durham consensus big green wall beaver queen sustainable urban ministries dapper, broad street wool e bull old north innovation bowtie maker, southsquare historic preservation maker full frame sodu the buehler. The bulls hipster blues major sodu duke chapel dino trail eagles, major the state of things ninth street miami boulevard diy. Durham goldenbelt duke park local erwin road saint joseph's, start-up adf miami boulevard bulltown strutters ccb plaza french press, erwin terrace the double nickel merge records elf. Angier drive medicine dance the indy one forty seven train arm wrestling, duke chapel university science and math partner erwin square black wall street major, seventy french press dance dur'm 15-501. Blue devils bouncing bulldogs third fridays the double nickel chapel drive beer doughman seventy west village wunc, northeast central luewwd hipster hub coworking erwin square authentic innovation. Seeds the buehler oprah building walltown arm wrestling historic preservation local, blackwell urban ministries old north the kress historic preservation doughman, trinity park foodie bay 7 eno river bragtown.</p>
+      </div>
+      <div class='step textContainer' id='lorem' data-step-no="3">
+          <h3 id='lorem-title' class='title'>Lorem</h3>
 
-            <p class='text'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid cumque non quaerat vitae animi? Assumenda nostrum alias corporis fugiat facilis vero ducimus, beatae aliquam, in perferendis, consectetur saepe unde velit. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid cumque non quaerat vitae animi? Assumenda nostrum alias corporis fugiat facilis vero ducimus, beatae aliquam, in perferendis, consectetur saepe unde velit.</p>
-        </section>
+          <p class='text'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid cumque non quaerat vitae animi? Assumenda nostrum alias corporis fugiat facilis vero ducimus, beatae aliquam, in perferendis, consectetur saepe unde velit. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid cumque non quaerat vitae animi? Assumenda nostrum alias corporis fugiat facilis vero ducimus, beatae aliquam, in perferendis, consectetur saepe unde velit.</p>
+      </div>
 
-        <section class='textContainer' id='ipsum'>
-            <h3 class='title'>Ipsum</h3>
+      <div class='step textContainer' id='ipsum'>
+          <h3 class='title'>Ipsum</h3>
 
-            <p class='text'>Fixie dirty durham consensus big green wall beaver queen sustainable urban ministries dapper, broad street wool e bull old north innovation bowtie maker, southsquare historic preservation maker full frame sodu the buehler. The bulls hipster blues major sodu duke chapel dino trail eagles, major the state of things ninth street miami boulevard diy. Durham goldenbelt duke park local erwin road saint joseph's, start-up adf miami boulevard bulltown strutters ccb plaza french press, erwin terrace the double nickel merge records elf. Angier drive medicine dance the indy one forty seven train arm wrestling, duke chapel university science and math partner erwin square black wall street major, seventy french press dance dur'm 15-501. Blue devils bouncing bulldogs third fridays the double nickel chapel drive beer doughman seventy west village wunc, northeast central luewwd hipster hub coworking erwin square authentic innovation. Seeds the buehler oprah building walltown arm wrestling historic preservation local, blackwell urban ministries old north the kress historic preservation doughman, trinity park foodie bay 7 eno river bragtown.</p>
-        </section>
+          <p class='text'>Fixie dirty durham consensus big green wall beaver queen sustainable urban ministries dapper, broad street wool e bull old north innovation bowtie maker, southsquare historic preservation maker full frame sodu the buehler. The bulls hipster blues major sodu duke chapel dino trail eagles, major the state of things ninth street miami boulevard diy. Durham goldenbelt duke park local erwin road saint joseph's, start-up adf miami boulevard bulltown strutters ccb plaza french press, erwin terrace the double nickel merge records elf. Angier drive medicine dance the indy one forty seven train arm wrestling, duke chapel university science and math partner erwin square black wall street major, seventy french press dance dur'm 15-501. Blue devils bouncing bulldogs third fridays the double nickel chapel drive beer doughman seventy west village wunc, northeast central luewwd hipster hub coworking erwin square authentic innovation. Seeds the buehler oprah building walltown arm wrestling historic preservation local, blackwell urban ministries old north the kress historic preservation doughman, trinity park foodie bay 7 eno river bragtown.</p>
+      </div>
 
     </Scrollama>
     </div>
@@ -120,7 +119,8 @@ export default {
       selectvariable: {label: 'Total Population in 1970', value: 'pop70'},
       pushSelect: _.take(this.selectvariable),
       currStep: null,
-      testButton: 'initial'
+      testButton: 'initial',
+      scrollVal: 0
     }
   },
   computed: {
@@ -147,7 +147,11 @@ export default {
       }
     },
     changeJoey: function () {
-      this.testButton = 'changed'
+      this.testButton = 'pop70'
+    },
+    stepEnterHandler ({element, index, direction}) {
+      // handle the step-event as required here
+      this.scrollVal = element.dataset.stepNo
     }
   }
 }

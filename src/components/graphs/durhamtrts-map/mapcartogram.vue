@@ -231,18 +231,62 @@ export default {
         }).remove()
     })
   },
-  props: ['propval', 'joey'],
+  props: ['propval', 'joey', 'scrollVal'],
   watch: {
     // Retrieve new property value from select in index.html
     propval: function (newPropVal) {
       this.changeTrtsPropVal(newPropVal)
     },
-    joey: function (joey) {
-      console.log(joey)
+    scrollVal: function (scrollVal) {
+      this.changeJoey(scrollVal)
     }
   },
   methods: {
     // Change block groups property value
+    changeJoey: function (joey) {
+      let value = function (d) {
+        return +d.properties[joey]
+      }
+      for (var i = 0; i < variableOptions.length; i++) {
+        if (variableOptions[i].value === joey) {
+          var voptions = variableOptions[i]
+        }
+      }
+      let lo = parseFloat(voptions.lo)
+      let hi = parseFloat(voptions.hi)
+
+      if (joey !== 'pccol0016') {
+        var colorScale = d3.scaleSequential(d3Chromatic.interpolateRdBu)
+          .domain([lo, hi])
+      }
+      else if (joey === 'pccol0016') {
+        colorScale = d3.scaleSequential(d3Chromatic.interpolateRdBu)
+          .domain([lo, hi])
+      }
+
+      this.durhamtrts.transition()
+        .duration(750)
+        .ease(d3.easeLinear)
+        .attr('fill', function (d) {
+          if (isNaN(d.properties[joey])) {
+            return 'transparent'
+          }
+          else {
+            return colorScale(value(d))
+          }
+        })
+
+      this.colorbar.remove()
+      this.colorbar = this.layer.append('g')
+        .attr('class', 'vertical')
+        .attr('transform', 'translate(100, 20)')
+      this.colorbar.append('text').attr('x', 45 + (voptions.hi.length * 3)).attr('y', 105).text(voptions.unit)
+      let tickspace = (hi - lo) / 4
+      let cbV = d3Colorbar.d3
+        .colorbarV(colorScale, 20, 200)
+        .tickValues([lo, lo + tickspace, lo + (tickspace * 2), lo + (tickspace * 3), hi])
+      this.colorbar.call(cbV)
+    },
     changeTrtsPropVal: function (propval) {
       let value = function (d) {
         return +d.properties[propval[0].value]
