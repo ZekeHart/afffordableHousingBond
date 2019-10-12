@@ -157,7 +157,7 @@ export default {
             return d.id
           })
 
-        let value = function (d) { return +d.properties['pcnhwht0016'] }
+        let value = function (d) { return +d.properties['pcpop0016'] }
 
         let lo = -100
         let hi = 100

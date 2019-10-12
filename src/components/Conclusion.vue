@@ -12,6 +12,43 @@
         </p>
         <h3>Chapel Hill</h3>
         <p>In November, 2018, voters in Chapel Hill approved a $10 million affordable housing bond that will build 400 new affordable housing units and renovate or maintain another 300 existing units. Over 50% of Chapel Hill’s residents pay 30% of their income or more on housing. The bond was financed by a one cent per $100 in a property’s valuation.</p>
+        <h2>
+            Impacts of Affordable Housing on Communities
+        </h2>
+        <h3></h3>
+        <p>
+            Some might argue that affordable housing increases taxes on the wealthy to provide benefits for only the poor and disadvantaged. Despite this misguided impression, research has shown that building and supporting affordable housing can have many beneficial impacts for an entire community, not just the direct recipients of the affordable housing units.
+        </p>
+        <h4>Economic Benefits</h4>
+        <ul>
+            <li>Building 100 affordable housing units through the LIHTC program can create more than 120 jobs, on average, during the project’s construction phase</li>
+            <li>These 100 housing units can sustain 30 additional jobs in industries such as retail, healthcare, and local government after the units are constructed and occupied</li>
+            <li>This rate of job creation is on par with building a comparable number of market-rate units</li>
+            <li>Employers state that housing for employees of all pay ranges is a major factor for their decisions to locate in a new area and/or remain in an existing region</li>
+        </ul>
+        <h4>Improved Educational Outcomes</h4>
+        <ul>
+            <li>Economic integration of public schools via building affordable housing in higher-income areas has, in some regions, demonstrated measurable, positive impacts on educational outcomes</li>
+        </ul>
+        <h4>Reduced Civic Administrative Costs</h4>
+        <ul>
+            <li>Reducing foreclosures and residential displacement saves governments and individual taxpayers money by reducing property maintenance costs, court and legal expenses, and social service provision</li>
+        </ul>
+        <h4>Impacts on Property Values</h4>
+        <ul>
+            <li>Rehabilitated existing affordable housing has been found to generally provide beneficial outcomes for neighboring property values</li>
+            <li>Studies have found that there are no changes in property values when new affordable housing is developed nearby if:</li>
+            <ul>
+            <li>Affordable housing is located in healthy and vibrant neighborhoods</li>
+            <li>The structure of the affordable housing doesn’t change the quality or character of the neighborhood</li>
+            <li>The management of affordable housing is responsive to problems and concerns</li>
+            <li>Affordable housing is not clustered by itself in low-income areas</li>
+        </ul>
+        </ul>
+        <h2>Conclusion</h2>
+        <p>
+            We stand at a crossroads of two futures: we can continue on the path we are on, letting market forces dictate the future of our city, or we can take a stand, embrace the diversity of Durham, and ensure a more just and economically vibrant future for everyone, regardless of how much you can pay in rent.
+        </p>
     </section>
 </template>
 
