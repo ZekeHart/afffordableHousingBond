@@ -18,5 +18,5 @@
   .textContainer {
       margin: auto;
       max-width: 60%;
-      height: 90vh;
+      min-height: 90vh;
   }

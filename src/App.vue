@@ -11,10 +11,8 @@
     <div id="q-app">
       <Header />
       <Intro />
-      <main class="mainContainer">
       <mapCartogram />
     <Conclusion />
-  </main>
     </div>
   </q-layout>
 </template>
