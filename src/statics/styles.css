@@ -1,0 +1,22 @@
+.scrollama-container {
+    display: grid;
+    grid-template-areas:
+      "graphic text";
+  }
+  .scrollama-graphic {
+      padding-top: 15vh;
+      margin-right: 10vh;
+      grid-area: text;
+      height: 90vh;
+      top: 10vh;
+    }
+  .mainContainer {
+      display: grid;
+      justify-content: center;
+  }
+  
+  .textContainer {
+      margin: auto;
+      max-width: 60%;
+      height: 90vh;
+  }

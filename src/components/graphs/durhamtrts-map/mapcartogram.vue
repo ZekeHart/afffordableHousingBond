@@ -157,10 +157,10 @@ export default {
             return d.id
           })
 
-        let value = function (d) { return +d.properties['pop70'] }
+        let value = function (d) { return +d.properties['pcpop0016'] }
 
-        let lo = 223.11
-        let hi = 5198.12
+        let lo = -100
+        let hi = 100
 
         // let colorScale = d3.scaleLinear()
         let colorScale = d3.scaleSequential(d3Chromatic.interpolateRdBu)
@@ -183,7 +183,7 @@ export default {
           .colorbarV(colorScale, 20, 200)
           .tickValues([lo, lo + tickspace, lo + (tickspace * 2), lo + (tickspace * 3), hi])
         mounthis.colorbar.call(cbV)
-        mounthis.colorbar.append('text').attr('x', 58).attr('y', 105).text('#')
+        mounthis.colorbar.append('text').attr('x', 58).attr('y', 105)
       })
     })
     // Add roads
@@ -231,15 +231,62 @@ export default {
         }).remove()
     })
   },
-  props: ['propval'],
+  props: ['propval', 'joey', 'scrollVal'],
   watch: {
     // Retrieve new property value from select in index.html
     propval: function (newPropVal) {
       this.changeTrtsPropVal(newPropVal)
+    },
+    scrollVal: function (scrollVal) {
+      this.changeJoey(scrollVal)
     }
   },
   methods: {
     // Change block groups property value
+    changeJoey: function (joey) {
+      let value = function (d) {
+        return +d.properties[joey]
+      }
+      for (var i = 0; i < variableOptions.length; i++) {
+        if (variableOptions[i].value === joey) {
+          var voptions = variableOptions[i]
+        }
+      }
+      let lo = parseFloat(voptions.lo)
+      let hi = parseFloat(voptions.hi)
+
+      if (joey !== 'pccol0016') {
+        var colorScale = d3.scaleSequential(d3Chromatic.interpolateRdBu)
+          .domain([lo, hi])
+      }
+      else if (joey === 'pccol0016') {
+        colorScale = d3.scaleSequential(d3Chromatic.interpolateRdBu)
+          .domain([lo, hi])
+      }
+
+      this.durhamtrts.transition()
+        .duration(750)
+        .ease(d3.easeLinear)
+        .attr('fill', function (d) {
+          if (isNaN(d.properties[joey])) {
+            return 'transparent'
+          }
+          else {
+            return colorScale(value(d))
+          }
+        })
+
+      this.colorbar.remove()
+      this.colorbar = this.layer.append('g')
+        .attr('class', 'vertical')
+        .attr('transform', 'translate(100, 20)')
+      this.colorbar.append('text').attr('x', 45 + (voptions.hi.length * 3)).attr('y', 105).text(voptions.unit)
+      let tickspace = (hi - lo) / 4
+      let cbV = d3Colorbar.d3
+        .colorbarV(colorScale, 20, 200)
+        .tickValues([lo, lo + tickspace, lo + (tickspace * 2), lo + (tickspace * 3), hi])
+      this.colorbar.call(cbV)
+    },
     changeTrtsPropVal: function (propval) {
       let value = function (d) {
         return +d.properties[propval[0].value]

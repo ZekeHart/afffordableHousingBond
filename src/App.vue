@@ -7,66 +7,15 @@
     :reveal="layoutStore.reveal"
     :left-class="{'bg-grey-2': true}"
   >
-    <!-- <div class="header" slot="header">
-      <div class="headimage">
-        <img src="~assets/affordablehousing.png" alt="Banner" class="banner">
-      </div>
-      <div class="apptitle" >State of Affordable<br />Housing in Durham</div>
 
-      <div class="mission" >
-        We want to ensure Durham remains a community with enough housing<br />
-        near employment for everyone. Our vision is to support Durham by<br />
-        aggregating and organizing housing related information to move<br />
-        community consensus and investment decisions forward.
-      </div>
-
-      <div class="toolbar">
-        <q-toolbar>
-          <q-btn flat @click="$refs.layout.toggleLeft()">
-            <q-icon name="menu" />
-          </q-btn>
-          <q-btn flat @click="changeView" >
-            <q-icon name="import export" />
-          </q-btn>
-        </q-toolbar>
-      </div>
-    </div> -->
-
-    <!-- <div slot="left">
-      <!--
-        Use <q-side-link> component
-        instead of <q-item> for
-        internal vue-router navigation
-      -->
-      <!-- <q-list no-border link inset-delimiter>
-        <q-list-header>Affordable Housing Menu</q-list-header>
-        <q-item>
-          <a href='#/'>
-            <q-item-main label='Home:' sublabel='Affordable Housing'/>
-          </a>   
-        </q-item>
-        <q-item v-for="item in items" :key="item.id">
-          <q-side-link :to="item.path">
-            <q-item-main :label="item.type" :sublabel="item.name" />
-          </q-side-link>
-        </q-item>
-      </q-list>
-    </div> --> 
-    <!-- Don't drop "q-app" class -->
     <div id="q-app">
-      <testHeader />
+      <Header />
+      <Intro />
+      <main class="mainContainer">
       <mapCartogram />
+    <Conclusion />
+  </main>
     </div>
-
-    <!-- <q-toolbar slot="footer">
-      <q-toolbar-title>
-        <div slot="subtitle">
-          <a href='http://quasar-framework.org'>Running on Quasar, </a>
-          <a href='https://vuejs.org'>Vue,</a>
-          <a href='http://www.django-rest-framework.org/'>and Django Rest Framework</a>
-        </div>
-      </q-toolbar-title>
-    </q-toolbar> -->
   </q-layout>
 </template>
 
@@ -74,7 +23,17 @@
 import layoutStore from './store/layout'
 import { routes } from 'router/graphs'
 import mapCartogram from 'src/components/graphs/durhamtrts-map/index.vue'
-import testHeader from 'src/components/Headers.vue'
+import Header from 'src/components/Headers.vue'
+import Intro from 'src/components/Intro.vue'
+import 'intersection-observer'
+import Scrollama from 'vue-scrollama'
+import Conclusion from 'src/components/Conclusion.vue'
+
+function load (component) {
+  return () => import(`src/${component}.vue`)
+}
+
+const map = load('components/graphs/durhamtrts-map/mapcartogram')
 
 import {
   QLayout,
@@ -102,8 +61,12 @@ export default {
     QItem,
     QItemMain,
     QSideLink,
+    Scrollama,
     mapCartogram,
-    testHeader
+    Conclusion,
+    Intro,
+    Header,
+    map: map
   },
   data () {
     const v = layoutStore.view
@@ -111,7 +74,8 @@ export default {
       layoutStore,
       items: routes,
       layoutvals: v,
-      isActive: false
+      isActive: false,
+      test: 'blue'
     }
   },
   methods: {
@@ -139,101 +103,13 @@ export default {
   }
 }
 </script>
+<style src="vue-scrollama/dist/vue-scrollama.css" >
+</style>
 <style>
-@media (min-width: 500px) {
-  .banner {
-    display: block;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    background: url(~assets/affordablehousing.png) no-repeat;
-    width: 1456px; /* Width of new image */
-    height: 191px; /* Height of new image */
-  }
-   .headimage {
-      position: relative;
-      height: 190;
-      width: auto;
-      overflow: hidden; 
-   }
-  .apptitle {
-     position: absolute;
-     font: bold 45px Helvetica, Arial, Sans-Serif; 
-     color: whitesmoke;
-     text-shadow:
-       -1px -1px 0 #000,
-       1px -1px 0 #000,
-       -1px 1px 0 #000,
-       1px 1px 0 #000;   
-     letter-spacing: -1px;
-     top: 25px; 
-     left: 40px; 
-     width: 100%;
-     line-height: 100%;
-  }
-  .toolbar { 
-    position: absolute; 
-    top: 150px; 
-    left: 0; 
-    width: 100%; 
-  }
+h2 {
+    font-size: 2.5rem;
 }
-@media (max-width: 499px) {
-  .banner {
-    display: block;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    background: url(~assets/affordablehousingalt.png) no-repeat;
-    width: 1028px; /* Width of new image */
-    height: 132px; /* Height of new image */
-  }
-  .toolbar { 
-    position: absolute; 
-    top: 120px; 
-    left: 0; 
-    width: 100%; 
-  }
-  .headimage { 
-      position: relative;
-      height: 140;
-      width: auto;
-      overflow: hidden; 
-   }
-  .apptitle {
-     position: absolute;
-     font: bold 35px Helvetica, Arial, Sans-Serif; 
-     color: whitesmoke;
-     text-shadow:
-       -1px -1px 0 #000,
-       1px -1px 0 #000,
-       -1px 1px 0 #000,
-       1px 1px 0 #000;   
-     letter-spacing: -1px;
-     top: 25px; 
-     left: 40px; 
-     width: 100%;
-     line-height: 100%;
-  }
-}
-@media (min-width: 1050px) {
-  .mission { 
-    position: absolute;
-    font: bold 15px Helvetica, Arial, Sans-Serif;
-    color: whitesmoke;
-    text-shadow:
-      -1px -1px 0 #000,
-      1px -1px 0 #000,
-      -1px 1px 0 #000,
-      1px 1px 0 #000;   
-    letter-spacing: 1px;
-    top: 40px; 
-    left: 470px; 
-    width: 100%;
-    line-height: 100%;
-  }
-}
-@media (max-width: 1049px) {
-  .mission {
-    display: none;
-  }
+h3 {
+  font-size:1.5rem;
 }
 </style>
