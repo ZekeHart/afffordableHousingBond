@@ -9,44 +9,25 @@ Data:
 
 -->
 <template>
-  <q-layout
-    ref="layout"
-    view="lHh Lpr fff"
-    v-bind:left-class="{'bg-grey-2': true}"
-  >
-    <div class='holder'>
-      <h6>{{ $route.name }}</h6>
-      <select class="select-group" v-model="selectgroup.value">
-        <option v-for="option in groupOptions" 
-          v-bind:value="option.value">
-          {{option.label}}
-        </option>        
-      </select>
-      <br/>
-      <select class="select-variable" v-model="selectvariable.value" v-on:input="newVar">
-        <option v-for="option in varOptions"
-          v-bind:value="option.value">
-          {{option.label}}
-        </option>
-      </select>
-      <div class="row">
-        <div class="col-9">
-          <div class='mapHolder'>
-            <durham-map v-bind:propval='pushSelect'
-              v-on:durhamtrSelected='onDurhamtrSelected'
-              v-on:durhamtrDeselected='onDurhamtrDeselected'
+      <div class='holder'>
+        <div class="row">
+          <div class="col-9">
+            <div class='mapHolder'>
+              <durham-map v-bind:propval='pushSelect'
+                v-on:durhamtrSelected='onDurhamtrSelected'
+                v-on:durhamtrDeselected='onDurhamtrDeselected'
+              />
+            </div>
+          </div>
+          <div class="col-3">
+            <tooltip v-if='currentDurhamtr'
+              v-bind:title='currentDurhamtrTitle'
+              v-bind:description='currentDurhamtrDescription'
             />
           </div>
         </div>
-        <div class="col-3">
-          <tooltip v-if='currentDurhamtr'
-            v-bind:title='currentDurhamtrTitle'
-            v-bind:description='currentDurhamtrDescription'
-          />
-        </div>
-      </div>
     </div>
-  </q-layout>
+
 </template>
 
 <script>
@@ -102,7 +83,8 @@ export default {
       groupOptions: groupOptions,
       selectgroup: {label: 'Durhams Demographic Numbers', value: 'democount'},
       selectvariable: {label: 'Total Population in 1970', value: 'pop70'},
-      pushSelect: _.take(this.selectvariable)
+      pushSelect: _.take(this.selectvariable),
+      currStep: null
     }
   },
   computed: {
@@ -133,6 +115,7 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+
 @media (min-width: 500px) {
   .holder {
     position: relative;

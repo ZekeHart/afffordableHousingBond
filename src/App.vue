@@ -7,55 +7,62 @@
     :reveal="layoutStore.reveal"
     :left-class="{'bg-grey-2': true}"
   >
-    <!-- <div class="header" slot="header">
-      <div class="headimage">
-        <img src="~assets/affordablehousing.png" alt="Banner" class="banner">
-      </div>
-      <div class="apptitle" >State of Affordable<br />Housing in Durham</div>
 
-      <div class="mission" >
-        We want to ensure Durham remains a community with enough housing<br />
-        near employment for everyone. Our vision is to support Durham by<br />
-        aggregating and organizing housing related information to move<br />
-        community consensus and investment decisions forward.
-      </div>
-
-      <div class="toolbar">
-        <q-toolbar>
-          <q-btn flat @click="$refs.layout.toggleLeft()">
-            <q-icon name="menu" />
-          </q-btn>
-          <q-btn flat @click="changeView" >
-            <q-icon name="import export" />
-          </q-btn>
-        </q-toolbar>
-      </div>
-    </div> -->
-
-    <!-- <div slot="left">
-      <!--
-        Use <q-side-link> component
-        instead of <q-item> for
-        internal vue-router navigation
-      -->
-      <!-- <q-list no-border link inset-delimiter>
-        <q-list-header>Affordable Housing Menu</q-list-header>
-        <q-item>
-          <a href='#/'>
-            <q-item-main label='Home:' sublabel='Affordable Housing'/>
-          </a>   
-        </q-item>
-        <q-item v-for="item in items" :key="item.id">
-          <q-side-link :to="item.path">
-            <q-item-main :label="item.type" :sublabel="item.name" />
-          </q-side-link>
-        </q-item>
-      </q-list>
-    </div> --> 
-    <!-- Don't drop "q-app" class -->
     <div id="q-app">
       <testHeader />
+      <main class="mainContainer">
+    <Scrollama @step-enter="stepEnterHandler"
+        :debug="true">
+        <section class='mapImg'  slot='graphic'>
       <mapCartogram />
+      </section>
+          <section class='textContainer' id='lorem'>
+            <h2 id='lorem-title' class='title'>Lorem</h2>
+
+            <p class='text'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid cumque non quaerat vitae animi? Assumenda nostrum alias corporis fugiat facilis vero ducimus, beatae aliquam, in perferendis, consectetur saepe unde velit. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid cumque non quaerat vitae animi? Assumenda nostrum alias corporis fugiat facilis vero ducimus, beatae aliquam, in perferendis, consectetur saepe unde velit.</p>
+        </section>
+
+        <section class='textContainer' id='ipsum'>
+            <h2 class='title'>Ipsum</h2>
+
+            <p class='text'>Fixie dirty durham consensus big green wall beaver queen sustainable urban ministries dapper, broad street wool e bull old north innovation bowtie maker, southsquare historic preservation maker full frame sodu the buehler. The bulls hipster blues major sodu duke chapel dino trail eagles, major the state of things ninth street miami boulevard diy. Durham goldenbelt duke park local erwin road saint joseph's, start-up adf miami boulevard bulltown strutters ccb plaza french press, erwin terrace the double nickel merge records elf. Angier drive medicine dance the indy one forty seven train arm wrestling, duke chapel university science and math partner erwin square black wall street major, seventy french press dance dur'm 15-501. Blue devils bouncing bulldogs third fridays the double nickel chapel drive beer doughman seventy west village wunc, northeast central luewwd hipster hub coworking erwin square authentic innovation. Seeds the buehler oprah building walltown arm wrestling historic preservation local, blackwell urban ministries old north the kress historic preservation doughman, trinity park foodie bay 7 eno river bragtown.</p>
+        </section>
+        <section class='textContainer' id='lorem'>
+            <h2 id='lorem-title' class='title'>Lorem</h2>
+
+            <p class='text'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid cumque non quaerat vitae animi? Assumenda nostrum alias corporis fugiat facilis vero ducimus, beatae aliquam, in perferendis, consectetur saepe unde velit. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid cumque non quaerat vitae animi? Assumenda nostrum alias corporis fugiat facilis vero ducimus, beatae aliquam, in perferendis, consectetur saepe unde velit.</p>
+        </section>
+
+        <section class='textContainer' id='ipsum'>
+            <h2 class='title'>Ipsum</h2>
+
+            <p class='text'>Fixie dirty durham consensus big green wall beaver queen sustainable urban ministries dapper, broad street wool e bull old north innovation bowtie maker, southsquare historic preservation maker full frame sodu the buehler. The bulls hipster blues major sodu duke chapel dino trail eagles, major the state of things ninth street miami boulevard diy. Durham goldenbelt duke park local erwin road saint joseph's, start-up adf miami boulevard bulltown strutters ccb plaza french press, erwin terrace the double nickel merge records elf. Angier drive medicine dance the indy one forty seven train arm wrestling, duke chapel university science and math partner erwin square black wall street major, seventy french press dance dur'm 15-501. Blue devils bouncing bulldogs third fridays the double nickel chapel drive beer doughman seventy west village wunc, northeast central luewwd hipster hub coworking erwin square authentic innovation. Seeds the buehler oprah building walltown arm wrestling historic preservation local, blackwell urban ministries old north the kress historic preservation doughman, trinity park foodie bay 7 eno river bragtown.</p>
+        </section>
+
+    </Scrollama>
+      <section class='textContainer' id='lorem'>
+            <h2 id='lorem-title' class='title'>Lorem</h2>
+
+            <p class='text'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid cumque non quaerat vitae animi? Assumenda nostrum alias corporis fugiat facilis vero ducimus, beatae aliquam, in perferendis, consectetur saepe unde velit. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid cumque non quaerat vitae animi? Assumenda nostrum alias corporis fugiat facilis vero ducimus, beatae aliquam, in perferendis, consectetur saepe unde velit.</p>
+        </section>
+
+        <section class='textContainer' id='ipsum'>
+            <h2 class='title'>Ipsum</h2>
+
+            <p class='text'>Fixie dirty durham consensus big green wall beaver queen sustainable urban ministries dapper, broad street wool e bull old north innovation bowtie maker, southsquare historic preservation maker full frame sodu the buehler. The bulls hipster blues major sodu duke chapel dino trail eagles, major the state of things ninth street miami boulevard diy. Durham goldenbelt duke park local erwin road saint joseph's, start-up adf miami boulevard bulltown strutters ccb plaza french press, erwin terrace the double nickel merge records elf. Angier drive medicine dance the indy one forty seven train arm wrestling, duke chapel university science and math partner erwin square black wall street major, seventy french press dance dur'm 15-501. Blue devils bouncing bulldogs third fridays the double nickel chapel drive beer doughman seventy west village wunc, northeast central luewwd hipster hub coworking erwin square authentic innovation. Seeds the buehler oprah building walltown arm wrestling historic preservation local, blackwell urban ministries old north the kress historic preservation doughman, trinity park foodie bay 7 eno river bragtown.</p>
+        </section>
+        <section class='textContainer' id='lorem'>
+            <h2 id='lorem-title' class='title'>Lorem</h2>
+
+            <p class='text'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid cumque non quaerat vitae animi? Assumenda nostrum alias corporis fugiat facilis vero ducimus, beatae aliquam, in perferendis, consectetur saepe unde velit. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid cumque non quaerat vitae animi? Assumenda nostrum alias corporis fugiat facilis vero ducimus, beatae aliquam, in perferendis, consectetur saepe unde velit.</p>
+        </section>
+
+        <section class='textContainer' id='ipsum'>
+            <h2 class='title'>Ipsum</h2>
+
+            <p class='text'>Fixie dirty durham consensus big green wall beaver queen sustainable urban ministries dapper, broad street wool e bull old north innovation bowtie maker, southsquare historic preservation maker full frame sodu the buehler. The bulls hipster blues major sodu duke chapel dino trail eagles, major the state of things ninth street miami boulevard diy. Durham goldenbelt duke park local erwin road saint joseph's, start-up adf miami boulevard bulltown strutters ccb plaza french press, erwin terrace the double nickel merge records elf. Angier drive medicine dance the indy one forty seven train arm wrestling, duke chapel university science and math partner erwin square black wall street major, seventy french press dance dur'm 15-501. Blue devils bouncing bulldogs third fridays the double nickel chapel drive beer doughman seventy west village wunc, northeast central luewwd hipster hub coworking erwin square authentic innovation. Seeds the buehler oprah building walltown arm wrestling historic preservation local, blackwell urban ministries old north the kress historic preservation doughman, trinity park foodie bay 7 eno river bragtown.</p>
+        </section>
+  </main>
     </div>
 
     <!-- <q-toolbar slot="footer">
@@ -75,6 +82,8 @@ import layoutStore from './store/layout'
 import { routes } from 'router/graphs'
 import mapCartogram from 'src/components/graphs/durhamtrts-map/index.vue'
 import testHeader from 'src/components/Headers.vue'
+import 'intersection-observer'
+import Scrollama from 'vue-scrollama'
 
 import {
   QLayout,
@@ -102,6 +111,7 @@ export default {
     QItem,
     QItemMain,
     QSideLink,
+    Scrollama,
     mapCartogram,
     testHeader
   },
@@ -139,101 +149,24 @@ export default {
   }
 }
 </script>
-<style>
-@media (min-width: 500px) {
-  .banner {
-    display: block;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    background: url(~assets/affordablehousing.png) no-repeat;
-    width: 1456px; /* Width of new image */
-    height: 191px; /* Height of new image */
-  }
-   .headimage {
-      position: relative;
-      height: 190;
-      width: auto;
-      overflow: hidden; 
-   }
-  .apptitle {
-     position: absolute;
-     font: bold 45px Helvetica, Arial, Sans-Serif; 
-     color: whitesmoke;
-     text-shadow:
-       -1px -1px 0 #000,
-       1px -1px 0 #000,
-       -1px 1px 0 #000,
-       1px 1px 0 #000;   
-     letter-spacing: -1px;
-     top: 25px; 
-     left: 40px; 
-     width: 100%;
-     line-height: 100%;
-  }
-  .toolbar { 
-    position: absolute; 
-    top: 150px; 
-    left: 0; 
-    width: 100%; 
-  }
+<style src="vue-scrollama/dist/vue-scrollama.css" >
+.scrollama-container {
+  display: grid;
+  grid-template-areas:
+    "graphic text";
 }
-@media (max-width: 499px) {
-  .banner {
-    display: block;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    background: url(~assets/affordablehousingalt.png) no-repeat;
-    width: 1028px; /* Width of new image */
-    height: 132px; /* Height of new image */
+  
+  .scrollama-graphic {
+    grid-area: text;
+    height: 80vh;
+    top: 10vh;
   }
-  .toolbar { 
-    position: absolute; 
-    top: 120px; 
-    left: 0; 
-    width: 100%; 
-  }
-  .headimage { 
-      position: relative;
-      height: 140;
-      width: auto;
-      overflow: hidden; 
-   }
-  .apptitle {
-     position: absolute;
-     font: bold 35px Helvetica, Arial, Sans-Serif; 
-     color: whitesmoke;
-     text-shadow:
-       -1px -1px 0 #000,
-       1px -1px 0 #000,
-       -1px 1px 0 #000,
-       1px 1px 0 #000;   
-     letter-spacing: -1px;
-     top: 25px; 
-     left: 40px; 
-     width: 100%;
-     line-height: 100%;
-  }
+.mainContainer {
+    display: grid;
+    justify-content: center;
 }
-@media (min-width: 1050px) {
-  .mission { 
-    position: absolute;
-    font: bold 15px Helvetica, Arial, Sans-Serif;
-    color: whitesmoke;
-    text-shadow:
-      -1px -1px 0 #000,
-      1px -1px 0 #000,
-      -1px 1px 0 #000,
-      1px 1px 0 #000;   
-    letter-spacing: 1px;
-    top: 40px; 
-    left: 470px; 
-    width: 100%;
-    line-height: 100%;
-  }
-}
-@media (max-width: 1049px) {
-  .mission {
-    display: none;
-  }
+
+.textContainer {
+    margin: auto;
 }
 </style>

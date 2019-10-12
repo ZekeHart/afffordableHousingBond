@@ -183,7 +183,7 @@ export default {
           .colorbarV(colorScale, 20, 200)
           .tickValues([lo, lo + tickspace, lo + (tickspace * 2), lo + (tickspace * 3), hi])
         mounthis.colorbar.call(cbV)
-        mounthis.colorbar.append('text').attr('x', 58).attr('y', 105).text('#')
+        mounthis.colorbar.append('text').attr('x', 58).attr('y', 105)
       })
     })
     // Add roads
