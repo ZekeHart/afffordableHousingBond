@@ -10,6 +10,7 @@ Data:
 -->
 <template>
       <div class='holder'>
+        <strong>Percent Change in White Population 2000-2016</strong>
         <div class="row">
           <div class="col-9">
             <div class='mapHolder'>
@@ -27,7 +28,6 @@ Data:
           </div>
         </div>
     </div>
-
 </template>
 
 <script>
