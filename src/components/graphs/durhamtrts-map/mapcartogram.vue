@@ -235,28 +235,28 @@ export default {
   watch: {
     // Retrieve new property value from select in index.html
     scrollVal: function (scrollVal) {
-      this.changeJoey(scrollVal)
+      this.changeScrollVal(scrollVal)
     }
   },
   methods: {
     // Change block groups property value
-    changeJoey: function (joey) {
+    changeScrollVal: function (scrollVal) {
       let value = function (d) {
-        return +d.properties[joey]
+        return +d.properties[scrollVal]
       }
       for (var i = 0; i < variableOptions.length; i++) {
-        if (variableOptions[i].value === joey) {
+        if (variableOptions[i].value === scrollVal) {
           var voptions = variableOptions[i]
         }
       }
       let lo = parseFloat(voptions.lo)
       let hi = parseFloat(voptions.hi)
 
-      if (joey !== 'pccol0016') {
+      if (scrollVal !== 'pccol0016') {
         var colorScale = d3.scaleSequential(d3Chromatic.interpolateRdBu)
           .domain([lo, hi])
       }
-      else if (joey === 'pccol0016') {
+      else if (scrollVal === 'pccol0016') {
         colorScale = d3.scaleSequential(d3Chromatic.interpolateRdBu)
           .domain([lo, hi])
       }
@@ -265,7 +265,7 @@ export default {
         .duration(750)
         .ease(d3.easeLinear)
         .attr('fill', function (d) {
-          if (isNaN(d.properties[joey])) {
+          if (isNaN(d.properties[scrollVal])) {
             return 'transparent'
           }
           else {
