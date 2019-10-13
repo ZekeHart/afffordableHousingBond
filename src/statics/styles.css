@@ -4,11 +4,11 @@
       "graphic text";
   }
   .scrollama-graphic {
-      padding-top: 15vh;
-      margin-right: 10vh;
-      grid-area: text;
-      height: 90vh;
-      top: 10vh;
+    padding-top: 10vh;
+    margin-right: 10vh;
+    grid-area: text;
+    height: 90vh;
+    top: 10vh;
     }
   .mainContainer {
       display: grid;

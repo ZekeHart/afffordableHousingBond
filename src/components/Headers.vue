@@ -5,7 +5,7 @@
                 <button class='menu-btn' @click='showOnClick()'>Menu</button>
             </div>
             <h2 class='c4d'>Code for Durham</h2>
-            <transition name="fade">
+            <transition name="woosh">
                 <div
                 v-if='!isActive'
                 class='logo-cnt'>
@@ -19,9 +19,9 @@
                     v-if='isActive'
                     :class='{ active : isActive, notActive : notActive }'>
                         <li class='liNav'><a @click='showOnClick()' class='navOptions' href='#population'>Population change</a></li>
-                        <li class='liNav'><a class='navOptions' href='#dolor'>Dolor</a></li>
-                        <li class='liNav'><a class='navOptions' href='#sit'>Sit</a></li>
-                        <li class='liNav'><a class='navOptions' href='#amet'>Amet</a></li>
+                        <li class='liNav'><a @click='showOnClick()' class='navOptions' href='#home'>Lorem</a></li>
+                        <li class='liNav'><a @click='showOnClick()' class='navOptions' href='#rent'>Ipsum</a></li>
+                        <li class='liNav'><a @click='showOnClick()' class='navOptions' href='#amet'>Amet</a></li>
                     </ul>
                 </transition>
             </nav>
@@ -34,13 +34,15 @@ export default {
   data: () => {
     return {
       isActive: false,
-      notActive: true
+      notActive: true,
+      pushBull: false
     }
   },
   methods: {
     showOnClick () {
       this.isActive = !this.isActive
       this.notActive = !this.notActive
+      this.pushBull = true
     }
   }
 }
@@ -70,6 +72,7 @@ $play: 'Playfair Display', serif; */
     transition: 2s;
     padding-top: 13vh;
     width: 15vw;
+    height: inherit;
     position: fixed;
     display: block;
     background: #399aca;
@@ -126,6 +129,7 @@ $play: 'Playfair Display', serif; */
 
 .logo-cnt {
     width: inherit;
+    height: inherit;
     position: absolute;
     z-index: 3;
     display: flex;
@@ -175,9 +179,16 @@ html {
 }
 
 .fade-enter-active, .fade-leave-active {
-  transition: opacity .5s;
+  transition: width .5s;
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  width: 0;
+}
+
+.woosh-enter-active, .woosh-leave-active {
+  transition: opacity .5s ease;
+}
+.woosh-enter, .woosh-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
 }
 
