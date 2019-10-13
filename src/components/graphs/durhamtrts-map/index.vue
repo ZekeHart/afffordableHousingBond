@@ -33,7 +33,7 @@ Data:
           </div>
       </div>
     </div>
-        <div class='step textContainer' id='lorem'  data-step-no="pcpop0016">
+        <div class='step textContainer'  data-step-no="pcpop0016">
           <h3 id='lorem-title' class='title'>Percent Change in Population between 2000-2016</h3>
 
           <p class='text'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid cumque non quaerat vitae animi? Assumenda nostrum alias corporis fugiat facilis vero ducimus, beatae aliquam, in perferendis, consectetur saepe unde velit. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid cumque non quaerat vitae animi? Assumenda nostrum alias corporis fugiat facilis vero ducimus, beatae aliquam, in perferendis, consectetur saepe unde velit.</p>
