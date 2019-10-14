@@ -27,11 +27,11 @@
                     <ul
                     v-if='isActive'
                     :class='{ active : isActive, notActive : notActive }'>
-                        <li class='liNav'><a @click='showOnClick()' class='navOptions' href='#population'>Population change</a></li>
-                        <li class='liNav'><a @click='showOnClick()' class='navOptions' href='#income'>Income change</a></li>
-                        <li class='liNav'><a @click='showOnClick()' class='navOptions' href='#home'>Housing costs</a></li>
-                        <li class='liNav'><a @click='showOnClick()' class='navOptions' href='#comparison'>See other cities</a></li>
-                        <li class='liNav'><a @click='showOnClick()' class='navOptions' href='#conclusion'>Our conclusion</a></li>
+                        <li class='liNav'><a @click='showOnClick()' class='navOptions' id='pop' href='#population'>Population change</a></li>
+                        <li class='liNav'><a @click='showOnClick()' class='navOptions' id='inc' href='#income'>Income change</a></li>
+                        <li class='liNav'><a @click='showOnClick()' class='navOptions' id='hou' href='#home'>Housing costs</a></li>
+                        <li class='liNav'><a @click='showOnClick()' class='navOptions' id='comp' href='#comparison'>See other cities</a></li>
+                        <li class='liNav'><a @click='showOnClick()' class='navOptions' id='conc' href='#conclusion'>Our conclusion</a></li>
                     </ul>
                 </transition>
             </nav>
@@ -193,12 +193,12 @@ $play: 'Playfair Display', serif; */
 .menu-btn:after {
     content: "";
     display: block;
-    width: 1em;
+    width: 0;
     height: 1px;
     bottom: 0;
     left: 50%;
     border-bottom: 1px solid #fff;
-    transition: 1s;
+    transition: .5s;
 }
 
 .menu-btn:hover:after {
@@ -245,19 +245,34 @@ $play: 'Playfair Display', serif; */
     text-transform: uppercase;
 }
 
+#pop:hover:after {
+    width: 89%;
+}
+
+#inc:hover:after {
+    width: 70%;
+}
+
+#hou:hover:after {
+    width: 67%;
+}
+
+#comp:hover:after {
+    width: 70%;
+}
+
+#conc:hover:after {
+    width: 74%;
+}
 .navOptions:after {
     content: "";
     display: block;
-    width: 1rem;
+    width: 0;
     height: 1px;
     bottom: 0;
     left: 50%;
     border-bottom: 1px solid #fff;
     transition: 1s;
-}
-
-.navOptions:hover:after {
-    width: 8rem;
 }
 
 .navOptions:hover {
