@@ -54,6 +54,7 @@
 
 <style>
 .conclusion {
+    margin-top: 10vh;
     margin-left: 10%;
     margin-right: 10%;
 }

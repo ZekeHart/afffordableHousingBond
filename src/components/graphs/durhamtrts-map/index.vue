@@ -35,22 +35,23 @@ Data:
           </div>
       </div>
     </div>
-        <div class='step textContainer' id='lorem'  data-step-no="pcpop0016">
+        <div class='step textContainer'  data-step-no="pcpop0016">
           <h3 id='lorem-title' class='title'>Percent Change in Population between 2000-2016</h3>
 
           <p class='text'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid cumque non quaerat vitae animi? Assumenda nostrum alias corporis fugiat facilis vero ducimus, beatae aliquam, in perferendis, consectetur saepe unde velit. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid cumque non quaerat vitae animi? Assumenda nostrum alias corporis fugiat facilis vero ducimus, beatae aliquam, in perferendis, consectetur saepe unde velit.</p>
       </div>
 
-      <div class='step textContainer' id='ipsum' data-step-no="pcnhwht0016">
+      <div class='step textContainer' data-step-no="pcnhwht0016">
           <h3 class='title'>Percent Change in White Population between 2000-2016</h3>
 
           <p class='text'>With some exceptions, the majority of population growth among white residents has occurred in the central parts of the city. The more suburban portions of the city have seen decreases in the white population since 2000.</p>
       </div>
-      <div class='step textContainer' id='lorem' data-step-no="pcnhblk0016">
+      <div class='step textContainer' data-step-no="pcnhblk0016">
           <h3 id='lorem-title' class='title'>Percent Change in Black Population between 2000-2016</h3>
 
           <p class='text'>This map is almost the exact inverse of the previous one, suggesting that black residents have been leaving and/or displaced from the central areas of Durham and relocating in the more suburban areas of the city.</p>
       </div>
+
       <div class='step textContainer' id='' data-step-no="hinc16">
           <h3 class='title'>Median Household Income in 2016</h3>
 

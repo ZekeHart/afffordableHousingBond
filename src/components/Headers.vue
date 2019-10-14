@@ -1,61 +1,199 @@
 <template>
     <header class='header'>
-        <nav class='navBar'>
-            <ul class='ulNav'>
-                <li><a class='navOptions' href='#lorem'>Code for Durham</a></li>
-                <li><img class='logo' src='https://bean-project-screenshots.s3.amazonaws.com/c4d_logo-2.png' alt='Code for Durham logo'/></li>
-                <li><a class='navOptions' href='#ipsum'>Ipsum</a></li>
-                <li><a class='navOptions' href='#dolor'>Dolor</a></li>
-                <li><a class='navOptions' href='#sit'>Sit</a></li>
-                <li><a class='navOptions' href='#amet'>Amet</a></li>
-            </ul>
-        </nav>
+        <div class='banner-colour'>
+            <div class='menu-btn-cnt'>
+                <button class='menu-btn' @click='showOnClick()'>Menu</button>
+            </div>
+            <h2 class='c4d'>Code for Durham</h2>
+            <transition name="woosh">
+                <div
+                v-if='!isActive'
+                class='logo-cnt'>
+                    <a href='https://codefordurham.com/project/affordable-housing/'><img class='logo' src='https://bean-project-screenshots.s3.amazonaws.com/c4d_logo-2.png' alt='Code for Durham logo'/></a>
+                </div>
+            </transition>
+            </div>
+             <nav class='navBar'>
+                <transition name="fade">
+                    <ul class='ulNav'
+                    v-if='isActive'
+                    :class='{ active : isActive, notActive : notActive }'>
+                        <li class='liNav'><a @click='showOnClick()' class='navOptions' href='#population'>Population change</a></li>
+                        <li class='liNav'><a @click='showOnClick()' class='navOptions' href='#home'>Lorem</a></li>
+                        <li class='liNav'><a @click='showOnClick()' class='navOptions' href='#rent'>Ipsum</a></li>
+                        <li class='liNav'><a @click='showOnClick()' class='navOptions' href='#amet'>Amet</a></li>
+                    </ul>
+                </transition>
+            </nav>
     </header>
 </template>
 
+<script>
+export default {
+  name: 'Headers',
+  data: () => {
+    return {
+      isActive: false,
+      notActive: true,
+      pushBull: false
+    }
+  },
+  methods: {
+    showOnClick () {
+      this.isActive = !this.isActive
+      this.notActive = !this.notActive
+      this.pushBull = true
+    }
+  }
+}
+</script>
 <style>
 @import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display:900&display=swap');
 /* $lato: 'Lato', sans-serif;
 $play: 'Playfair Display', serif; */
 
+.c4d {
+    font-family: 'Lato', sans-serif;
+    color: #fff;
+    font-size: 2.5rem;
+    margin-left: 10vh;
+    align-self: center;
+}
+
+.menu-btn-cnt {
+    z-index: 99;
+    position: relative;
+    height: inherit;
+    background-color: #fff;
+}
+
+.active {
+    transition: 2s;
+    padding-top: 13vh;
+    width: 15vw;
+    height: inherit;
+    position: fixed;
+    display: block;
+    background: #399aca;
+    list-style-type: none;
+    padding-inline-start: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    z-index: 88;
+}
+
+.active.v-enter, .active.v-leave {
+    height: 0;
+    padding: 0 10px;
+    opacity: 0;
+}
+.notActive {
+    display: none;
+}
+
+.menu-btn {
+    z-index: 99;
+    cursor: pointer;
+    margin-top: 4.5vh;
+    margin-left: 2vh;
+    margin-right: 2vh;
+    background: #fff;
+    border: none;
+    color: #399aca;
+    /* font-size: 2rem; */
+    /* letter-spacing: .5em; */
+    padding: 0;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.menu-btn:after {
+    content: "";
+    display: block;
+    width: 50%;
+    height: 1px;
+    bottom: 0;
+    left: 50%;
+    border-bottom: 1px solid #399aca;
+    transition: 1s;
+}
+
+.menu-btn:hover:after {
+    width: 100%;
+}
+
 .header {
     padding-bottom: 15vh;
 }
+
+.logo-cnt {
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+}
 .logo {
-    height: 15vh;
+    /* margin-top: 3.5vh; */
+    align-self: flex-end;
+    height: 20vh;
     border-radius: 50%;
 }
 
-.navBar {
+.banner-colour {
+    display: flex;
+    /* align-items: center; */
     /* background-image: linear-gradient(to right, #399aca, #5442f5); */
     background-color: #399aca;
     width: 100vw;
     height: 12vh;
     position: fixed;
-    z-index: 99;
+    z-index: 95;
 }
 
-
 .navOptions {
-    margin: auto;
+    position: relative;
     color: #fff;
     font-size: 1rem;
-    border-bottom: .1rem solid #fff;
+    z-index: 99;
+    border-bottom: 1px solid #fff;
     font-family: 'Lato', sans-serif;
     text-transform: uppercase;
 }
 
-
-.ulNav {
-    display: flex;
-    justify-content: center;
-    list-style-type: none;
+.liNav {
+    padding-left: 2vh;
+    align-self: flex-end;
+    padding-bottom: 10%;
 }
 
 .textContainer {
     margin: auto;
 }
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: width .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  width: 0;
+}
+
+.woosh-enter-active, .woosh-leave-active {
+  transition: opacity .5s ease;
+}
+.woosh-enter, .woosh-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+
+/* test */
+
 /* * {
     box-sizing: border-box;
     margin: 0;

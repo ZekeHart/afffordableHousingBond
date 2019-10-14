@@ -23,7 +23,8 @@
     "topojson": "^2.2.0",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
-    "vue-scrollama": "^1.1.1"
+    "vue-scrollama": "^1.1.1",
+    "vue2-animate": "^2.1.2"
   },
   "devDependencies": {
     "autoprefixer": "^6.4.0",
