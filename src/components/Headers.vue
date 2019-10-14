@@ -28,9 +28,9 @@
                     v-if='isActive'
                     :class='{ active : isActive, notActive : notActive }'>
                         <li class='liNav'><a @click='showOnClick()' class='navOptions' href='#population'>Population changes</a></li>
-                        <li class='liNav'><a @click='showOnClick()' class='navOptions' href='#home'>Income changes</a></li>
-                        <li class='liNav'><a @click='showOnClick()' class='navOptions' href='#rent'>Housing costs</a></li>
-                        <li class='liNav'><a @click='showOnClick()' class='navOptions' href='#amet'>Other cities</a></li>
+                        <li class='liNav'><a @click='showOnClick()' class='navOptions' href='#income'>Income changes</a></li>
+                        <li class='liNav'><a @click='showOnClick()' class='navOptions' href='#home'>Housing costs</a></li>
+                        <li class='liNav'><a @click='showOnClick()' class='navOptions' href='#comparison'>Other cities</a></li>
                     </ul>
                 </transition>
             </nav>
