@@ -97,7 +97,7 @@ export default {
       .attr('class', 'vertical')
       .attr('transform', 'translate(100, 20)')
 
-    // Add municiple boundaries
+    // Add municipal boundaries
     d3.json('statics/data/muniboundaries.topojson', function (topology) {
       let geojson = topojson.feature(topology, topology.objects.muniboundaries)
 
@@ -231,35 +231,32 @@ export default {
         }).remove()
     })
   },
-  props: ['propval', 'joey', 'scrollVal'],
+  props: ['scrollVal'],
   watch: {
     // Retrieve new property value from select in index.html
-    propval: function (newPropVal) {
-      this.changeTrtsPropVal(newPropVal)
-    },
     scrollVal: function (scrollVal) {
-      this.changeJoey(scrollVal)
+      this.changeScrollVal(scrollVal)
     }
   },
   methods: {
     // Change block groups property value
-    changeJoey: function (joey) {
+    changeScrollVal: function (scrollVal) {
       let value = function (d) {
-        return +d.properties[joey]
+        return +d.properties[scrollVal]
       }
       for (var i = 0; i < variableOptions.length; i++) {
-        if (variableOptions[i].value === joey) {
+        if (variableOptions[i].value === scrollVal) {
           var voptions = variableOptions[i]
         }
       }
       let lo = parseFloat(voptions.lo)
       let hi = parseFloat(voptions.hi)
 
-      if (joey !== 'pccol0016') {
+      if (scrollVal !== 'pccol0016') {
         var colorScale = d3.scaleSequential(d3Chromatic.interpolateRdBu)
           .domain([lo, hi])
       }
-      else if (joey === 'pccol0016') {
+      else if (scrollVal === 'pccol0016') {
         colorScale = d3.scaleSequential(d3Chromatic.interpolateRdBu)
           .domain([lo, hi])
       }
@@ -268,51 +265,7 @@ export default {
         .duration(750)
         .ease(d3.easeLinear)
         .attr('fill', function (d) {
-          if (isNaN(d.properties[joey])) {
-            return 'transparent'
-          }
-          else {
-            return colorScale(value(d))
-          }
-        })
-
-      this.colorbar.remove()
-      this.colorbar = this.layer.append('g')
-        .attr('class', 'vertical')
-        .attr('transform', 'translate(100, 20)')
-      this.colorbar.append('text').attr('x', 45 + (voptions.hi.length * 3)).attr('y', 105).text(voptions.unit)
-      let tickspace = (hi - lo) / 4
-      let cbV = d3Colorbar.d3
-        .colorbarV(colorScale, 20, 200)
-        .tickValues([lo, lo + tickspace, lo + (tickspace * 2), lo + (tickspace * 3), hi])
-      this.colorbar.call(cbV)
-    },
-    changeTrtsPropVal: function (propval) {
-      let value = function (d) {
-        return +d.properties[propval[0].value]
-      }
-      for (var i = 0; i < variableOptions.length; i++) {
-        if (variableOptions[i].value === propval[0].value) {
-          var voptions = variableOptions[i]
-        }
-      }
-      let lo = parseFloat(voptions.lo)
-      let hi = parseFloat(voptions.hi)
-
-      if (propval[0].value !== 'pccol0016') {
-        var colorScale = d3.scaleSequential(d3Chromatic.interpolateRdBu)
-          .domain([lo, hi])
-      }
-      else if (propval[0].value === 'pccol0016') {
-        colorScale = d3.scaleSequential(d3Chromatic.interpolateRdBu)
-          .domain([lo, hi])
-      }
-
-      this.durhamtrts.transition()
-        .duration(750)
-        .ease(d3.easeLinear)
-        .attr('fill', function (d) {
-          if (isNaN(d.properties[propval[0].value])) {
+          if (isNaN(d.properties[scrollVal])) {
             return 'transparent'
           }
           else {
