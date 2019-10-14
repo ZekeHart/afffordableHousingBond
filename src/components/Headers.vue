@@ -238,9 +238,23 @@ $play: 'Playfair Display', serif; */
     color: #fff;
     font-size: 1rem;
     z-index: 99;
-    border-bottom: 1px solid #fff;
     font-family: 'Lato', sans-serif;
     text-transform: uppercase;
+}
+
+.navOptions:after {
+    content: "";
+    display: block;
+    width: 1rem;
+    height: 1px;
+    bottom: 0;
+    left: 50%;
+    border-bottom: 1px solid #fff;
+    transition: 1s;
+}
+
+.navOptions:hover:after {
+    width: 4rem;
 }
 
 .navOptions:hover {
