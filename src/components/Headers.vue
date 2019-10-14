@@ -18,8 +18,8 @@
                     <ul class='ulNav'
                     v-if='isActive'
                     :class='{ active : isActive, notActive : notActive }'>
-                        <li class='liNav'><a @click='showOnClick()' class='navOptions' href='#population'>Population change</a></li>
-                        <li class='liNav'><a @click='showOnClick()' class='navOptions' href='#home'>Lorem</a></li>
+                        <li class='liNav'><a @click='showOnClick()' class='navOptions' href='#population'>Population changes</a></li>
+                        <li class='liNav'><a @click='showOnClick()' class='navOptions' href='#home'>Income changes</a></li>
                         <li class='liNav'><a @click='showOnClick()' class='navOptions' href='#rent'>Ipsum</a></li>
                         <li class='liNav'><a @click='showOnClick()' class='navOptions' href='#amet'>Amet</a></li>
                     </ul>
