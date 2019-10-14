@@ -10,7 +10,7 @@
         </p>
         <h2>Explore Changes in Durham’s Population, Incomes, and Housing Costs
         </h2>
-        <p id='population'>Many news articles and reports tell us how many people are moving to Durham each month or the income of each new resident compared to current residents. But changes in population, income, and housing costs are not the same across all areas of Durham. The following maps invite you to explore changes in Durham’s population, income, and housing costs from 2010-2017.</p>
+        <p id=''>Many news articles and reports tell us how many people are moving to Durham each month or the income of each new resident compared to current residents. But changes in population, income, and housing costs are not the same across all areas of Durham. The following maps invite you to explore changes in Durham’s population, income, and housing costs from 2010-2017.</p>
     </section>
 </template>
 

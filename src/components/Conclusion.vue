@@ -1,5 +1,5 @@
 <template>
-    <section class="conclusion">
+    <section id='comparison' class="conclusion">
         <h2>Comparison With Other NC Cities</h2>
         <p>Just as Durham is not the only city that has seen dramatic population and rent increases, neither is Durham the only city to take a stand in support of affordable housing that can positively benefit many different communities. Other cities, counties, and towns in North Carolina have raised money and support for affordable housing that benefits communities at risk of displacement. By passing this bond, Durham would join the company of other diverse communities that support residents of all income levels.</p>
         <h3>Charlotte</h3>
