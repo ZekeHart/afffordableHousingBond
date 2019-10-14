@@ -21,6 +21,6 @@
       min-height: 90vh;
       display: flex;
       flex-flow: column wrap;
-      align-items: center;
+      /* align-items: center; */
       justify-content: center;
   }
