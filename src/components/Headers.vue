@@ -27,10 +27,11 @@
                     <ul
                     v-if='isActive'
                     :class='{ active : isActive, notActive : notActive }'>
-                        <li class='liNav'><a @click='showOnClick()' class='navOptions' href='#population'>Population changes</a></li>
-                        <li class='liNav'><a @click='showOnClick()' class='navOptions' href='#income'>Income changes</a></li>
+                        <li class='liNav'><a @click='showOnClick()' class='navOptions' href='#population'>Population change</a></li>
+                        <li class='liNav'><a @click='showOnClick()' class='navOptions' href='#income'>Income change</a></li>
                         <li class='liNav'><a @click='showOnClick()' class='navOptions' href='#home'>Housing costs</a></li>
-                        <li class='liNav'><a @click='showOnClick()' class='navOptions' href='#comparison'>Other cities</a></li>
+                        <li class='liNav'><a @click='showOnClick()' class='navOptions' href='#comparison'>See other cities</a></li>
+                        <li class='liNav'><a @click='showOnClick()' class='navOptions' href='#conclusion'>Our conclusion</a></li>
                     </ul>
                 </transition>
             </nav>
@@ -128,6 +129,7 @@ $play: 'Playfair Display', serif; */
 .liItem:hover {
     color: #fff;
 }
+
 .c4d {
     font-family: 'Lato', sans-serif;
     color: #fff;
@@ -140,6 +142,7 @@ $play: 'Playfair Display', serif; */
     width: 30%;
     margin-left: 9vh;
 }
+
 .menu-btn-cnt {
     z-index: 99;
     position: relative;
@@ -151,7 +154,7 @@ $play: 'Playfair Display', serif; */
     transition: 2s;
     padding-top: 13vh;
     width: 16vw;
-    height: 50vh;
+    height: 46vh;
     position: fixed;
     display: block;
     background: #399aca;
@@ -190,7 +193,7 @@ $play: 'Playfair Display', serif; */
 .menu-btn:after {
     content: "";
     display: block;
-    width: 50%;
+    width: 1em;
     height: 1px;
     bottom: 0;
     left: 50%;
@@ -199,7 +202,7 @@ $play: 'Playfair Display', serif; */
 }
 
 .menu-btn:hover:after {
-    width: 100%;
+    width: 2.7em;
 }
 
 .header {
@@ -254,7 +257,7 @@ $play: 'Playfair Display', serif; */
 }
 
 .navOptions:hover:after {
-    width: 4rem;
+    width: 8rem;
 }
 
 .navOptions:hover {
@@ -279,7 +282,7 @@ html {
 .fade-enter-active, .fade-leave-active {
   transition: all .8s;
 }
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+.fade-enter, .fade-leave-to {
   height: 0;
   padding-top: 0;
 }
@@ -287,7 +290,7 @@ html {
 .woosh-enter-active, .woosh-leave-active {
   transition: opacity .5s ease;
 }
-.woosh-enter, .woosh-leave-to /* .fade-leave-active below version 2.1.8 */ {
+.woosh-enter, .woosh-leave-to {
   opacity: 0;
 }
 

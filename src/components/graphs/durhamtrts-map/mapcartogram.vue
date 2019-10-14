@@ -321,6 +321,10 @@ export default {
 </script>
 
 <style>
+
+#tooltipContainer {
+  display: none;
+}
 .background {
   fill: none;
   pointer-events: all;
