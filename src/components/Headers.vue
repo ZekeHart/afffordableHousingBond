@@ -4,7 +4,7 @@
             <div class='menu-btn-cnt'>
                 <button class='menu-btn' @click='showOnClick()'>Menu</button>
             </div>
-            <h2 class='c4d'>Code for Durham</h2>
+            <img class='c4d-logo' src='https://bean-project-screenshots.s3.amazonaws.com/c4d-wht-red.png'/>
             <transition name="woosh">
                 <div
                 v-if='!isActive'
@@ -18,8 +18,8 @@
                     <ul class='ulNav'
                     v-if='isActive'
                     :class='{ active : isActive, notActive : notActive }'>
-                        <li class='liNav'><a @click='showOnClick()' class='navOptions' href='#population'>Population change</a></li>
-                        <li class='liNav'><a @click='showOnClick()' class='navOptions' href='#home'>Lorem</a></li>
+                        <li class='liNav'><a @click='showOnClick()' class='navOptions' href='#population'>Population changes</a></li>
+                        <li class='liNav'><a @click='showOnClick()' class='navOptions' href='#home'>Income changes</a></li>
                         <li class='liNav'><a @click='showOnClick()' class='navOptions' href='#rent'>Ipsum</a></li>
                         <li class='liNav'><a @click='showOnClick()' class='navOptions' href='#amet'>Amet</a></li>
                     </ul>
@@ -61,6 +61,10 @@ $play: 'Playfair Display', serif; */
     align-self: center;
 }
 
+.c4d-logo {
+    width: 80vh;
+    margin-left: 3vh;
+}
 .menu-btn-cnt {
     z-index: 99;
     position: relative;
