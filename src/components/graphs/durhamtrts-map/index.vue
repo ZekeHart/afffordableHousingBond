@@ -191,7 +191,6 @@ export default {
 </style>
 
 <style lang="stylus" scoped>
-
 @media (min-width: 500px) {
   .holder {
     position: relative;

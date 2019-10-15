@@ -24,3 +24,16 @@
       /* align-items: center; */
       justify-content: center;
   }
+/* .text {
+  font-size: .5rem;
+
+} */
+
+@media only screen and (max-width: 768px) {
+  .title {
+    font-size: 1px;
+  }
+  .text {
+    font-size: 1px;
+  }
+}
