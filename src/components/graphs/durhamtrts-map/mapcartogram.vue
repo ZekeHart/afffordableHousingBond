@@ -60,6 +60,7 @@ export default {
     var mounthis = this
     var dataById
 
+    console.log(mounthis.initValue)
     mounthis.cartogram = d3Cartogram.d3.cartogram()
       .projection(projection)
       .properties(function (d) {
@@ -157,10 +158,15 @@ export default {
             return d.id
           })
 
-        let value = function (d) { return +d.properties['pcpop0016'] }
+        let value = function (d) { return +d.properties[mounthis.initValue] }
 
-        let lo = -100
-        let hi = 100
+        for (var i = 0; i < variableOptions.length; i++) {
+          if (variableOptions[i].value === mounthis.initValue) {
+            var voptions = variableOptions[i]
+          }
+        }
+        let lo = parseFloat(voptions.lo)
+        let hi = parseFloat(voptions.hi)
 
         // let colorScale = d3.scaleLinear()
         let colorScale = d3.scaleSequential(d3Chromatic.interpolateRdBu)
@@ -231,7 +237,7 @@ export default {
         }).remove()
     })
   },
-  props: ['scrollVal'],
+  props: ['scrollVal', 'initValue'],
   watch: {
     // Retrieve new property value from select in index.html
     scrollVal: function (scrollVal) {
