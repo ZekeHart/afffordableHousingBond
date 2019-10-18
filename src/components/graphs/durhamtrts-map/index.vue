@@ -92,9 +92,17 @@ Data:
     </mq-layout>
 
     <mq-layout mq='mobile'>
-        <h3>Percent Change in Population between 2000-2016</h3>
-        <durhamMap initValue='pcpop0016'/>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid cumque non quaerat vitae animi? Assumenda nostrum alias corporis fugiat facilis vero ducimus, beatae aliquam, in perferendis, consectetur saepe unde velit. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid cumque non quaerat vitae animi? Assumenda nostrum alias corporis fugiat facilis vero ducimus, beatae aliquam, in perferendis, consectetur saepe unde velit.</p>
+        <h3 class='m-title'>Percent Change in Population between 2000-2016</h3>
+        <durhamMap class='please' initValue='pcpop0016'/>
+        <p class='m-text'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid cumque non quaerat vitae animi? Assumenda nostrum alias corporis fugiat facilis vero ducimus, beatae aliquam, in perferendis, consectetur saepe unde velit.</p>
+
+        <h3 class='m-title'>Percent Change in White Population between 2000-2016</h3>
+        <durhamMap initValue='pcnhwht0016'/>
+        <p class='m-text'>With some exceptions, the majority of population growth among white residents has occurred in the central parts of the city. The more suburban portions of the city have seen decreases in the white population since 2000.</p>
+
+        <h3 class='m-title'>Percent Change in Black Population between 2000-2016</h3>
+        <durhamMap initValue='pcnhblk0016'/>
+        <p class='m-text'>This map is almost the exact inverse of the previous one, suggesting that black residents have been leaving and/or displaced from the central areas of Durham and relocating in the more suburban areas of the city.</p>
     </mq-layout>
     </div>
 </template>
@@ -209,13 +217,14 @@ export default {
 </style>
 
 <style scoped>
-@media only screen and (max-width: 768px) {
-  .title {
-    font-size: 1px;
-  }
-  .text {
-    font-size: 1px;
-  }
+.m-title {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.m-text {
+  font-size: 1rem;
+  text-align: center;
 }
 </style>
 <style lang="stylus" scoped>

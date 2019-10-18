@@ -12,7 +12,7 @@ Links:
 -->
 
 <template>
-  <svg width='580' height='580' />
+  <svg id='chart' width='490' height='540' />
 </template>
 
 <script>
@@ -27,7 +27,6 @@ const d3 = require('d3')
 const topojson = require('topojson')
 const d3Cartogram = require('mixins/d3-cartogram')
 const d3Colorbar = require('mixins/d3-colorbar')
-
 // Colors stuff
 import * as d3Chromatic from 'd3-scale-chromatic'
 import { variableOptions } from './ltdbacs_trts_vuevaroptions'
@@ -70,6 +69,10 @@ export default {
     const svg = d3.select(this.$el)
     width = svg.node().getBoundingClientRect().width
     height = width / 2
+    // const svg = d3
+    // .select("#chart")
+    // .append("svg")
+    // .attr("viewBox", `0 0 300 600`)
 
     svg.append('svg')
       .attr('class', 'background')
