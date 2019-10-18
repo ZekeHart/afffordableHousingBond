@@ -92,8 +92,9 @@ Data:
     </mq-layout>
 
     <mq-layout mq='mobile'>
+      <div class='mobileContainer'>
         <h3 class='m-title'>Percent Change in Population between 2000-2016</h3>
-        <durhamMap class='please' initValue='pcpop0016'/>
+        <durhamMap initValue='pcpop0016'/>
         <p class='m-text'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid cumque non quaerat vitae animi? Assumenda nostrum alias corporis fugiat facilis vero ducimus, beatae aliquam, in perferendis, consectetur saepe unde velit.</p>
 
         <h3 class='m-title'>Percent Change in White Population between 2000-2016</h3>
@@ -103,6 +104,38 @@ Data:
         <h3 class='m-title'>Percent Change in Black Population between 2000-2016</h3>
         <durhamMap initValue='pcnhblk0016'/>
         <p class='m-text'>This map is almost the exact inverse of the previous one, suggesting that black residents have been leaving and/or displaced from the central areas of Durham and relocating in the more suburban areas of the city.</p>
+
+        <h3 class='m-title'>Percent Change in Household Income between 2000 and 2016, Adjusted to 2017 Dollars</h3>
+        <durhamMap initValue='pchinc0016a17'/>
+        <p class='m-text'>Lorem lorem lorem</p>
+
+        <h3 class='m-title'>Percent Change in Household Income for White Population between 2000 and 2016, Adjusted to 2017 Dollars</h3>
+        <durhamMap 
+        initValue='pchincw0016a17'
+        v-on:durhamtrSelected='onDurhamtrSelected'
+        v-on:durhamtrDeselected='onDurhamtrDeselected'/>
+        <p class='m-text'>lorem lorem lorem</p>
+
+        <h3 class='m-title'>Percent Change in Household Income for Black Population between 2000 and 2016, Adjusted to 2017 Dollars</h3>
+        <durhamMap initValue='pchincb0016a17'/>
+        <p class='m-text'>lorem</p>
+
+        <h3 class='m-title'>Percent change in Median Home Value, 2000-2016 in 2017 dollars</h3>
+        <durhamMap initValue='pcmhmval0016a17'/>
+        <p class='m-text'>As downtown Durham has become more popular as a place to live, work, and play, housing values have increased in the central areas of the city, while prices have dropped in farther-afield suburban parts of the city. The areas closest to the border of the county have seen increases in median home value, perhaps due to construction of large, expensive homes on large, suburban tracts.</p>
+
+        <h3 class='m-title'>Percent Change in Median Contract Rent between 2000 and 2016, Adjusted to 2017 Dollars</h3>
+        <durhamMap initValue='pcmrent0016a17'/>
+        <p class='m-text'>We see a similar relationship in this map as with the changes in median home value, although both the increases and decreases in rent seem more dramatic than the changes in home values. The central and downtown areas of the city have seen high rent growth while the close-in suburban areas have seen rents drop. Just as home values increase on the outskirts of the county, so, too, have these areas experienced significant rent increases.</p>
+
+        <h3 class='m-title'>Gross Rent as Percent of Household Income in 2016</h3>
+        <durhamMap initValue='grprchi16'/>
+        <p class='m-text'>Regardless of where you look in the city, residents who rent pay a large share of their incomes on housing costs. Though there are some areas where the rent burden is relatively low, the number of areas where people pay 30% or more of their monthly income on rent is staggering.</p>
+        
+        <h3 class='m-title'>Morgage Monthly Owners Cost as a Percent of Household Income in 2016</h3>
+        <durhamMap initValue='mmocphi16'/>
+        <p class='m-text'>The fact that homeowners spend a lower percentage of their incomes on housing costs than renters suggests that existing homeowners are, on average, better off financially than renters. Despite their relative lower burdens as compared with renters, there are large number of tracts where homeowners still pay 30% or more of their monthly incomes on housing costs, exceeding the threshold of affordability.</p>
+      </div>
     </mq-layout>
     </div>
 </template>
@@ -218,12 +251,18 @@ export default {
 
 <style scoped>
 .m-title {
-  font-size: 2rem;
+  padding: 1rem;
+  margin: 0 auto;
+  font-size: 1.5rem;
+  max-width: 80vw;
   text-align: center;
 }
 
 .m-text {
+  padding: 1rem;
+  margin: 0 auto;
   font-size: 1rem;
+  max-width: 80vw;
   text-align: center;
 }
 </style>

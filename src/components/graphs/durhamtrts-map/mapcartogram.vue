@@ -275,8 +275,11 @@ export default {
         .ease(d3.easeLinear)
         .attr('fill', function (d) {
           if (isNaN(d.properties[scrollVal])) {
-            return 'transparent'
+            return '#fff'
           }
+          // else if (isNaN(d.properties[this.initValue])) {
+          //   return '#fff'
+          // }
           else {
             return colorScale(value(d))
           }
