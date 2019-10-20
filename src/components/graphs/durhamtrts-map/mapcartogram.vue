@@ -77,7 +77,7 @@ export default {
         return dataById.get(d.id)
       })
 
-    const svg = d3.select('#chart')
+    const svg = d3.select(this.$el)
     width = svg.node().getBoundingClientRect().width
     height = width / 2
     // const svg = d3
