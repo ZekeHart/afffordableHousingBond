@@ -45,7 +45,7 @@
             <li>Affordable housing is not clustered by itself in low-income areas</li>
         </ul>
         </ul>
-        <h2>Conclusion</h2>
+        <h2 id='conclusion'>Conclusion</h2>
         <p>
             We stand at a crossroads of two futures: we can continue on the path we are on, letting market forces dictate the future of our city, or we can take a stand, embrace the diversity of Durham, and ensure a more just and economically vibrant future for everyone, regardless of how much you can pay in rent.
         </p>

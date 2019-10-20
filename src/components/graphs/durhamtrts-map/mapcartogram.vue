@@ -12,7 +12,7 @@ Links:
 -->
 
 <template>
-  <svg width='580' height='580' />
+  <svg id='chart' width='490' height='540' />
 </template>
 
 <script>
@@ -27,10 +27,11 @@ const d3 = require('d3')
 const topojson = require('topojson')
 const d3Cartogram = require('mixins/d3-cartogram')
 const d3Colorbar = require('mixins/d3-colorbar')
-
 // Colors stuff
 import * as d3Chromatic from 'd3-scale-chromatic'
 import { variableOptions } from './ltdbacs_trts_vuevaroptions'
+import Vue from 'vue'
+import VueMq from 'vue-mq'
 
 const projection = d3.geoMercator()
   .center([-78.7, 36.05])
@@ -40,6 +41,15 @@ const path = d3.geoPath()
   .projection(projection)
 
 const roadsurls = ['roads.572-802.geojson', 'roads.573-802.geojson', 'roads.574-802.geojson', 'roads.575-802.geojson', 'roads.576-802.geojson', 'roads.577-802.geojson', 'roads.572-803.geojson', 'roads.573-803.geojson', 'roads.574-803.geojson', 'roads.575-803.geojson', 'roads.576-803.geojson', 'roads.577-803.geojson', 'roads.572-804.geojson', 'roads.573-804.geojson', 'roads.574-804.geojson', 'roads.575-804.geojson', 'roads.576-804.geojson', 'roads.577-804.geojson', 'roads.572-805.geojson', 'roads.573-805.geojson', 'roads.574-805.geojson', 'roads.575-805.geojson', 'roads.576-805.geojson', 'roads.577-805.geojson']
+
+Vue.use(VueMq, {
+  breakpoints: {
+    mobile: 450,
+    tablet: 900,
+    laptop: 1250,
+    desktop: Infinity
+  }
+})
 
 export default {
   data: function () {
@@ -60,15 +70,20 @@ export default {
     var mounthis = this
     var dataById
 
+    // console.log(mounthis.initValue)
     mounthis.cartogram = d3Cartogram.d3.cartogram()
       .projection(projection)
       .properties(function (d) {
         return dataById.get(d.id)
       })
 
-    const svg = d3.select(this.$el)
+    const svg = d3.select('#chart')
     width = svg.node().getBoundingClientRect().width
     height = width / 2
+    // const svg = d3
+    // .select("#chart")
+    // .append("svg")
+    // .attr("viewBox", `0 0 300 600`)
 
     svg.append('svg')
       .attr('class', 'background')
@@ -157,10 +172,15 @@ export default {
             return d.id
           })
 
-        let value = function (d) { return +d.properties['pcpop0016'] }
+        let value = function (d) { return +d.properties[mounthis.initValue] }
 
-        let lo = -100
-        let hi = 100
+        for (var i = 0; i < variableOptions.length; i++) {
+          if (variableOptions[i].value === mounthis.initValue) {
+            var voptions = variableOptions[i]
+          }
+        }
+        let lo = parseFloat(voptions.lo)
+        let hi = parseFloat(voptions.hi)
 
         // let colorScale = d3.scaleLinear()
         let colorScale = d3.scaleSequential(d3Chromatic.interpolateRdBu)
@@ -170,7 +190,7 @@ export default {
           .duration(750)
           .ease(d3.easeLinear)
           .attr('fill', function (d) {
-            if (isNaN(d.properties['pop70'])) {
+            if (isNaN(d.properties[mounthis.initValue])) {
               return '#fff'
             }
             else {
@@ -231,7 +251,7 @@ export default {
         }).remove()
     })
   },
-  props: ['scrollVal'],
+  props: ['scrollVal', 'initValue'],
   watch: {
     // Retrieve new property value from select in index.html
     scrollVal: function (scrollVal) {
@@ -266,8 +286,14 @@ export default {
         .ease(d3.easeLinear)
         .attr('fill', function (d) {
           if (isNaN(d.properties[scrollVal])) {
-            return 'transparent'
+            console.log('scrollvalue', typeof(scrollVal))
+            console.log('initial vlaleure', typeof(initValue))
+            console.log('deeeeese propeties', d.properties)
+            return '#fff'
           }
+          // else if (isNaN(d.properties[this.initValue])) {
+          //   return '#fff'
+          // }
           else {
             return colorScale(value(d))
           }
@@ -321,6 +347,10 @@ export default {
 </script>
 
 <style>
+
+#tooltipContainer {
+  display: none;
+}
 .background {
   fill: none;
   pointer-events: all;

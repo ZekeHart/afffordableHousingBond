@@ -27,10 +27,11 @@
                     <ul
                     v-if='isActive'
                     :class='{ active : isActive, notActive : notActive }'>
-                        <li class='liNav'><a @click='showOnClick()' class='navOptions' href='#population'>Population changes</a></li>
-                        <li class='liNav'><a @click='showOnClick()' class='navOptions' href='#income'>Income changes</a></li>
-                        <li class='liNav'><a @click='showOnClick()' class='navOptions' href='#home'>Housing costs</a></li>
-                        <li class='liNav'><a @click='showOnClick()' class='navOptions' href='#comparison'>Other cities</a></li>
+                        <li class='liNav'><a @click='showOnClick()' class='navOptions' id='pop' href='#population'>Population change</a></li>
+                        <li class='liNav'><a @click='showOnClick()' class='navOptions' id='inc' href='#income'>Income change</a></li>
+                        <li class='liNav'><a @click='showOnClick()' class='navOptions' id='hou' href='#home'>Housing costs</a></li>
+                        <li class='liNav'><a @click='showOnClick()' class='navOptions' id='comp' href='#comparison'>See other cities</a></li>
+                        <li class='liNav'><a @click='showOnClick()' class='navOptions' id='conc' href='#conclusion'>Our conclusion</a></li>
                     </ul>
                 </transition>
             </nav>
@@ -128,6 +129,7 @@ $play: 'Playfair Display', serif; */
 .liItem:hover {
     color: #fff;
 }
+
 .c4d {
     font-family: 'Lato', sans-serif;
     color: #fff;
@@ -140,18 +142,12 @@ $play: 'Playfair Display', serif; */
     width: 30%;
     margin-left: 9vh;
 }
-.menu-btn-cnt {
-    z-index: 99;
-    position: relative;
-    height: inherit;
-    background-color: #B30513;
-}
 
 .active {
     transition: 2s;
     padding-top: 13vh;
     width: 16vw;
-    height: 50vh;
+    height: 46vh;
     position: fixed;
     display: block;
     background: #399aca;
@@ -171,13 +167,23 @@ $play: 'Playfair Display', serif; */
     display: none;
 }
 
+.menu-btn-cnt {
+    z-index: 99;
+    position: relative;
+    height: inherit;
+    display: flex;
+    align-items: center;
+    width: 12vh;
+    justify-content: center;
+    background-color: #B30513;
+}
+
 .menu-btn {
+    margin: auto;
+    align-self: center;
     z-index: 99;
     cursor: pointer;
-    margin-top: 4.5vh;
-    margin-left: 2vh;
-    margin-right: 2vh;
-    background: #B30513;
+    background: transparent;
     border: none;
     color: #fff;
     /* font-size: 2rem; */
@@ -190,16 +196,16 @@ $play: 'Playfair Display', serif; */
 .menu-btn:after {
     content: "";
     display: block;
-    width: 50%;
+    width: 0;
     height: 1px;
     bottom: 0;
     left: 50%;
     border-bottom: 1px solid #fff;
-    transition: 1s;
+    transition: .5s;
 }
 
 .menu-btn:hover:after {
-    width: 100%;
+    width: 2.7em;
 }
 
 .header {
@@ -216,7 +222,7 @@ $play: 'Playfair Display', serif; */
 }
 .logo {
     margin-top: 1vh;
-    align-self: flex-end;
+    /* align-self: flex-end; */
     height: 19vh;
     border-radius: 50%;
 }
@@ -238,9 +244,38 @@ $play: 'Playfair Display', serif; */
     color: #fff;
     font-size: 1rem;
     z-index: 99;
-    border-bottom: 1px solid #fff;
     font-family: 'Lato', sans-serif;
     text-transform: uppercase;
+}
+
+#pop:hover:after {
+    width: 89%;
+}
+
+#inc:hover:after {
+    width: 70%;
+}
+
+#hou:hover:after {
+    width: 67%;
+}
+
+#comp:hover:after {
+    width: 70%;
+}
+
+#conc:hover:after {
+    width: 74%;
+}
+.navOptions:after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 1px;
+    bottom: 0;
+    left: 50%;
+    border-bottom: 1px solid #fff;
+    transition: 1s;
 }
 
 .navOptions:hover {
@@ -265,7 +300,7 @@ html {
 .fade-enter-active, .fade-leave-active {
   transition: all .8s;
 }
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+.fade-enter, .fade-leave-to {
   height: 0;
   padding-top: 0;
 }
@@ -273,7 +308,7 @@ html {
 .woosh-enter-active, .woosh-leave-active {
   transition: opacity .5s ease;
 }
-.woosh-enter, .woosh-leave-to /* .fade-leave-active below version 2.1.8 */ {
+.woosh-enter, .woosh-leave-to {
   opacity: 0;
 }
 
@@ -380,4 +415,22 @@ ul {
     top: 10vh;
   }
 } */
+
+@media only screen and (max-width: 768px) {
+    .logo-cnt { 
+        display: none;
+    }
+    .c4d-logo {
+        width: 80%;
+        margin-left: 1vh;
+    }
+
+    .ulNav {
+        display: none;
+    }
+    .active {
+        width: 40vw;
+        height: 40vh;
+    }
+}
 </style>
