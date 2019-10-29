@@ -179,12 +179,12 @@ export default {
             var voptions = variableOptions[i]
           }
         }
-        let lo = parseFloat(voptions.lo)
-        let hi = parseFloat(voptions.hi)
+        let lo = Math.max(parseFloat(voptions.lo), -100)
+        let hi = Math.min(parseFloat(voptions.hi), 100)
 
         // let colorScale = d3.scaleLinear()
         let colorScale = d3.scaleSequential(d3Chromatic.interpolateRdBu)
-          .domain([lo, hi])
+          .domain([hi, lo])
 
         mounthis.durhamtrts.transition()
           .duration(750)
@@ -269,17 +269,12 @@ export default {
           var voptions = variableOptions[i]
         }
       }
-      let lo = parseFloat(voptions.lo)
-      let hi = parseFloat(voptions.hi)
+      let lo = Math.max(parseFloat(voptions.lo), -100)
+      let hi = Math.min(parseFloat(voptions.hi), 100)
 
-      if (scrollVal !== 'pccol0016') {
-        var colorScale = d3.scaleSequential(d3Chromatic.interpolateRdBu)
-          .domain([lo, hi])
-      }
-      else if (scrollVal === 'pccol0016') {
-        colorScale = d3.scaleSequential(d3Chromatic.interpolateRdBu)
-          .domain([lo, hi])
-      }
+      let colorScale = d3.scaleSequential(d3Chromatic.interpolateRdBu)
+          .domain([hi, lo])
+
 
       this.durhamtrts.transition()
         .duration(750)
@@ -299,12 +294,14 @@ export default {
       this.colorbar.remove()
       this.colorbar = this.layer.append('g')
         .attr('class', 'vertical')
-        .attr('transform', 'translate(100, 20)')
+        .attr('transform', 'translate(100,20)')
+      
       this.colorbar.append('text').attr('x', 45 + (voptions.hi.length * 3)).attr('y', 105).text(voptions.unit)
+      console.log('unit', d3Chromatic.interpolateRdBu)
       let tickspace = (hi - lo) / 4
       let cbV = d3Colorbar.d3
         .colorbarV(colorScale, 20, 200)
-        .tickValues([lo, lo + tickspace, lo + (tickspace * 2), lo + (tickspace * 3), hi])
+        .tickValues([hi, hi - tickspace, hi - (tickspace * 2), hi - (tickspace * 3), lo])
       this.colorbar.call(cbV)
     },
     // Click to zoom
