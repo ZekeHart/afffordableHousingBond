@@ -93,7 +93,7 @@ Data:
 
     <mq-layout mq='mobile'>
       <div class='mobileContainer'>
-        <h3 class='m-title'>Percent Change in Population between 2000-2016</h3>
+        <h3 id='population' class='m-title'>Percent Change in Population between 2000-2016</h3>
         <durhamMap initValue='pcpop0016'/>
         <p class='m-text'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid cumque non quaerat vitae animi? Assumenda nostrum alias corporis fugiat facilis vero ducimus, beatae aliquam, in perferendis, consectetur saepe unde velit.</p>
 

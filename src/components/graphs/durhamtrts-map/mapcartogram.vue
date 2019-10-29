@@ -286,9 +286,6 @@ export default {
         .ease(d3.easeLinear)
         .attr('fill', function (d) {
           if (isNaN(d.properties[scrollVal])) {
-            console.log('scrollvalue', typeof(scrollVal))
-            console.log('initial vlaleure', typeof(initValue))
-            console.log('deeeeese propeties', d.properties)
             return '#fff'
           }
           // else if (isNaN(d.properties[this.initValue])) {
@@ -428,5 +425,11 @@ export default {
 .tooltip:touch {
   fill: steelblue;
   fill-opacity: 0.5;
+}
+
+@media only screen and (max-width: 768px) {
+  svg {
+    left: 400px;
+  }
 }
 </style>
