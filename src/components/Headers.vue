@@ -27,9 +27,9 @@
                     <ul
                     v-if='isActive'
                     :class='{ active : isActive, notActive : notActive }'>
+                        <li class='liNav'><a @click='showOnClick()' class='navOptions' id='hou' href='#home'>Housing costs</a></li>
                         <li class='liNav'><a @click='showOnClick()' class='navOptions' id='pop' href='#population'>Population change</a></li>
                         <li class='liNav'><a @click='showOnClick()' class='navOptions' id='inc' href='#income'>Income change</a></li>
-                        <li class='liNav'><a @click='showOnClick()' class='navOptions' id='hou' href='#home'>Housing costs</a></li>
                         <li class='liNav'><a @click='showOnClick()' class='navOptions' id='comp' href='#comparison'>See other cities</a></li>
                         <li class='liNav'><a @click='showOnClick()' class='navOptions' id='conc' href='#conclusion'>Our conclusion</a></li>
                     </ul>
@@ -211,6 +211,7 @@ $play: 'Playfair Display', serif; */
 
 .header {
     padding-bottom: 15vh;
+    background: linear-gradient(270deg, rgba(255,255,255,1) 30%, rgba(57,154,202,1) 100%);
 }
 
 .logo-cnt {

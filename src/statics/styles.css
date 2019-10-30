@@ -1,9 +1,20 @@
 @import url('https://fonts.googleapis.com/css?family=Lato|Playfair+Display:400,700&display=swap');
 
 .subtitle {
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-family: 'Lato', sans-serif;
   line-height: 1.5;
+}
+
+.introDiv {
+  display: flex;
+  align-items: center;
+  min-height: 80vh;
+  padding: 3%;
+}
+
+.joey {
+  margin: auto;
 }
 
 .medium-title {
@@ -13,16 +24,29 @@
   line-height: 1.5;
 }
 .big-title {
-  font-size: 3.5rem;
+  font-size: 2rem;
   font-weight: 700;
   font-family: 'Playfair Display', serif;
   line-height: 1.5;
+  margin: auto;
 }
 .title {
   font-size: 2rem;
   font-weight: 400;
   font-family: 'Playfair Display', serif;
   line-height: 1.5
+}
+
+@media (min-width: 800px) { 
+  .intro {
+      display: flex;
+  }
+  .big-title {
+    font-size: 3rem;
+  }
+  .introDiv {
+    max-width: 50%;
+  }
 }
 
 .scrollama-container {

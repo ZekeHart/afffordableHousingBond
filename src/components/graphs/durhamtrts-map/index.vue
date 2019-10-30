@@ -36,7 +36,7 @@ Data:
             </div>
         </div>
       </div>
-      <div class='step textContainer' id='' data-step-no="grprchi16">
+      <div class='step textContainer' id='home' data-step-no="grprchi16">
             <h3 class='title'>Gross Rent as Percent of Household Income in 2016 (Click to zoom in)</h3>
 
             <p class='subtitle'>Regardless of where you look in the city, renters pay a large share of their incomes on housing costs. In fact, almost half of all households in the Raleigh-Durham region spent 30% or more of their monthly income on rent or mortgage payments.</p>
@@ -46,7 +46,7 @@ Data:
 
             <p class='subtitle'>Although owners are less cost burdened than renters, many homeowners still pay 30% or more of their monthly incomes on housing costs.</p>
         </div>
-        <div id='home' class='step textContainer' data-step-no="pcmhmval0016a17">
+        <div id='' class='step textContainer' data-step-no="pcmhmval0016a17">
             <h3 class='title'>Percent change in Median Home Value, 2000-2016 in 2017 dollars (Click to zoom in)</h3>
 
             <p class='subtitle'>As downtown Durham has become more popular as a place to live, work, and play, housing values have increased in the central areas of the city, while prices have dropped in farther-afield suburban parts of the city. The areas closest to the border of the county have seen increases in median home value, perhaps due to construction of large, expensive homes on large, suburban tracts.</p>
