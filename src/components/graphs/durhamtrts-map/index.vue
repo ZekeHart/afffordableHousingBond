@@ -95,7 +95,7 @@ Data:
 
     <mq-layout mq='mobile'>
       <div class='mobileContainer'>
-        <h3 class='m-title'>Gross Rent as Percent of Household Income in 2016</h3>
+        <h3 id='home' class='m-title'>Gross Rent as Percent of Household Income in 2016</h3>
         <durhamMap initValue='grprchi16'/>
         <p class='m-text'>Regardless of where you look in the city, renters pay a large share of their incomes on housing costs. In fact, almost half of all households in the Raleigh-Durham region spent 30% or more of their monthly income on rent or mortgage payments.</p>
         <h3 class='m-title'>Morgage Monthly Owners Cost as a Percent of Household Income in 2016</h3>
@@ -121,7 +121,7 @@ Data:
         <durhamMap initValue='pcnhblk0016'/>
         <p class='m-text'>This map is almost the exact inverse of the previous one, suggesting that African-American residents have been leaving and/or displaced from the central areas of Durham and relocating in the more suburban areas of the city.</p>
 
-        <h3 class='m-title'>Percent Change in Household Income between 2000 and 2016, Adjusted to 2017 Dollars</h3>
+        <h3 id='income' class='m-title'>Percent Change in Household Income between 2000 and 2016, Adjusted to 2017 Dollars</h3>
         <durhamMap initValue='pchinc0016a17'/>
         <p class='m-text'>Another factor that impacts the affordability of housing is income. This map demonstrates that the central parts and most suburban areas of the city have seen income increases, while everything in between has seen stagnant or decreasing incomes.</p>
 
