@@ -184,7 +184,7 @@ export default {
 
         // let colorScale = d3.scaleLinear()
         let colorScale = d3.scaleSequential(d3Chromatic.interpolateRdBu)
-          .domain([hi, lo])
+          .domain([lo, hi])
 
         mounthis.durhamtrts.transition()
           .duration(750)
@@ -273,7 +273,7 @@ export default {
       let hi = Math.min(parseFloat(voptions.hi), 100)
 
       let colorScale = d3.scaleSequential(d3Chromatic.interpolateRdBu)
-        .domain([hi, lo])
+        .domain([lo, hi])
 
       this.durhamtrts.transition()
         .duration(750)
