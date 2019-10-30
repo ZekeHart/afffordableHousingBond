@@ -1,3 +1,7 @@
+.htext {
+  font-size: 2rem;
+}
+
 .scrollama-container {
     display: grid;
     grid-template-areas:

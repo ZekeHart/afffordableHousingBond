@@ -272,10 +272,7 @@ export default {
       let lo = Math.max(parseFloat(voptions.lo), -100)
       let hi = Math.min(parseFloat(voptions.hi), 100)
 
-      let colorScale = d3.scaleSequential(d3Chromatic.interpolateRdBu)
-          .domain([hi, lo])
-
-
+      let colorScale = d3.scaleSequential(d3Chromatic.interpolateRdBu).domain([hi, lo])
       this.durhamtrts.transition()
         .duration(750)
         .ease(d3.easeLinear)
@@ -295,7 +292,6 @@ export default {
       this.colorbar = this.layer.append('g')
         .attr('class', 'vertical')
         .attr('transform', 'translate(100,20)')
-      
       this.colorbar.append('text').attr('x', 45 + (voptions.hi.length * 3)).attr('y', 105).text(voptions.unit)
       console.log('unit', d3Chromatic.interpolateRdBu)
       let tickspace = (hi - lo) / 4

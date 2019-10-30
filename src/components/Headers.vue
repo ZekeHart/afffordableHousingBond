@@ -1,8 +1,8 @@
 <template>
     <header class='header'>
         <div class='banner-colour'>
-            <div class='menu-btn-cnt'>
-                <button class='menu-btn' @click='showOnClick()'>Menu</button>
+            <div class='menu-btn-cnt' @click='showOnClick()'>
+                <button class='menu-btn'>Menu</button>
             </div>
             <img class='c4d-logo' 
             src='https://bean-project-screenshots.s3.amazonaws.com/c4d-wht-red.png'
@@ -169,6 +169,7 @@ $play: 'Playfair Display', serif; */
 
 .menu-btn-cnt {
     z-index: 99;
+    cursor: pointer;
     position: relative;
     height: inherit;
     display: flex;
@@ -244,42 +245,30 @@ $play: 'Playfair Display', serif; */
     color: #fff;
     font-size: 1rem;
     z-index: 99;
+    border-bottom: 1px #fff solid;
     font-family: 'Lato', sans-serif;
     text-transform: uppercase;
 }
 
-#pop:hover:after {
-    width: 89%;
-}
+/* .navOptions:hover:before {
+    transform: scaleX(1);
+    visibility: visible;
+} */
 
-#inc:hover:after {
-    width: 70%;
-}
-
-#hou:hover:after {
-    width: 67%;
-}
-
-#comp:hover:after {
-    width: 70%;
-}
-
-#conc:hover:after {
-    width: 74%;
-}
 .navOptions:after {
     content: "";
-    display: block;
-    width: 0;
+    position: absolute;
     height: 1px;
     bottom: 0;
-    left: 50%;
-    border-bottom: 1px solid #fff;
+    /* left: -10; */
     transition: 1s;
+    /* visibility: hidden;
+    transform: scaleX(0); */
 }
 
 .navOptions:hover {
     color: #fff;
+    position: relative;
 }
 
 .liNav {
