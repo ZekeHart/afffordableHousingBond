@@ -274,7 +274,6 @@ export default {
 
       let colorScale = d3.scaleSequential(d3Chromatic.interpolateRdBu)
         .domain([lo, hi])
-
       this.durhamtrts.transition()
         .duration(750)
         .ease(d3.easeLinear)
