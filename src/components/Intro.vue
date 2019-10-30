@@ -10,7 +10,7 @@
 
                 <p class='subtitle'>To address financial and demographic shifts in the city that have resulted in the affordable housing crisis, Mayor Steve Schewel proposed a $95 million affordable housing bond, described in detail <a class='here' target=_blank rel=_noopener href='https://www.durhamaffordablehousingbond.com/'>here.</a></p>
 
-                <p class='subtitle'>But numbers alone don’t tell the full story - our site provides the context for why passing this bond is crucial to a thriving Durham. Scroll down to learn more about why we should invest in our community through affordable housing.</p>
+                <p class='subtitle'>But numbers alone don’t tell the full story - our site provides the context for why passing this bond is crucial to a thriving Durham. <a href="#home" class="scrollLink">Scroll down</a> to learn more about why we should invest in our community through affordable housing.</p>
             </div>
         </div>
     </section>
@@ -19,13 +19,17 @@
 
 <style>
 .try {
-    height: 85vh;
+    min-height: 85vh;
     background: linear-gradient(270deg, rgba(255,255,255,1) 30%, rgba(57,154,202,1) 100%);
+}
+
+.scrollLink {
+    color: #2d6a88;
+    text-decoration-line: underline;
 }
 .intro {
     margin-left: 10%;
     margin-right: 10%;
-    display: flex;
 }
 
 .here {
@@ -36,4 +40,5 @@
 .here:hover {
     color: #2d6a88;
 }
+
 </style>

@@ -27,9 +27,9 @@
                     <ul
                     v-if='isActive'
                     :class='{ active : isActive, notActive : notActive }'>
+                        <li class='liNav'><a @click='showOnClick()' class='navOptions' id='hou' href='#home'>Housing costs</a></li>
                         <li class='liNav'><a @click='showOnClick()' class='navOptions' id='pop' href='#population'>Population change</a></li>
                         <li class='liNav'><a @click='showOnClick()' class='navOptions' id='inc' href='#income'>Income change</a></li>
-                        <li class='liNav'><a @click='showOnClick()' class='navOptions' id='hou' href='#home'>Housing costs</a></li>
                         <li class='liNav'><a @click='showOnClick()' class='navOptions' id='comp' href='#comparison'>See other cities</a></li>
                         <li class='liNav'><a @click='showOnClick()' class='navOptions' id='conc' href='#conclusion'>Our conclusion</a></li>
                     </ul>
