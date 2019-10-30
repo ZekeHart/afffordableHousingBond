@@ -39,61 +39,61 @@ Data:
       <div class='step textContainer' id='' data-step-no="grprchi16">
             <h3 class='title'>Gross Rent as Percent of Household Income in 2016 (Click to zoom in)</h3>
 
-            <p class='text'>Regardless of where you look in the city, renters pay a large share of their incomes on housing costs. In fact, almost half of all households in the Raleigh-Durham region spent 30% or more of their monthly income on rent or mortgage payments.</p>
+            <p class='subtitle'>Regardless of where you look in the city, renters pay a large share of their incomes on housing costs. In fact, almost half of all households in the Raleigh-Durham region spent 30% or more of their monthly income on rent or mortgage payments.</p>
         </div>
         <div class='step textContainer' id='' data-step-no="mmocphi16">
             <h3 class='title'>Morgage Monthly Owners Cost as a Percent of Household Income in 2016 (Click to zoom in)</h3>
 
-            <p class='text'>Although owners are less cost burdened than renters, many homeowners still pay 30% or more of their monthly incomes on housing costs.</p>
+            <p class='subtitle'>Although owners are less cost burdened than renters, many homeowners still pay 30% or more of their monthly incomes on housing costs.</p>
         </div>
         <div id='home' class='step textContainer' data-step-no="pcmhmval0016a17">
             <h3 class='title'>Percent change in Median Home Value, 2000-2016 in 2017 dollars (Click to zoom in)</h3>
 
-            <p class='text'>As downtown Durham has become more popular as a place to live, work, and play, housing values have increased in the central areas of the city, while prices have dropped in farther-afield suburban parts of the city. The areas closest to the border of the county have seen increases in median home value, perhaps due to construction of large, expensive homes on large, suburban tracts.</p>
+            <p class='subtitle'>As downtown Durham has become more popular as a place to live, work, and play, housing values have increased in the central areas of the city, while prices have dropped in farther-afield suburban parts of the city. The areas closest to the border of the county have seen increases in median home value, perhaps due to construction of large, expensive homes on large, suburban tracts.</p>
         </div>
         <div class='step textContainer' id='' data-step-no="pcmrent0016a17">
             <h3 class='title'>Percent Change in Median Contract Rent between 2000 and 2016, Adjusted to 2017 Dollars</h3>
 
-            <p class='text'>We see a similar relationship in this map as with the changes in median home value, although both the increases and decreases in rent seem more dramatic than the changes in home values. The central and downtown areas of the city have seen high rent growth while the close-in suburban areas have seen rents drop. Just as home values increase on the outskirts of the county, so, too, have these areas experienced significant rent increases, perhaps caused by dramatic growth in Durham’s population.</p>
+            <p class='subtitle'>We see a similar relationship in this map as with the changes in median home value, although both the increases and decreases in rent seem more dramatic than the changes in home values. The central and downtown areas of the city have seen high rent growth while the close-in suburban areas have seen rents drop. Just as home values increase on the outskirts of the county, so, too, have these areas experienced significant rent increases, perhaps caused by dramatic growth in Durham’s population.</p>
         </div>
           <div id='population' class='step textContainer'  data-step-no="pcpop0016">
               <h3 class='title'>Percent Change in Population between 2000-2016 (Click to zoom in)</h3>
 
-              <p class='text'>Most areas of the city have seen dramatic population growth, one of the factors in rent growth. But this picture changes depending on how you filter the data, especially when considering race.</p>
+              <p class='subtitle'>Most areas of the city have seen dramatic population growth, one of the factors in rent growth. But this picture changes depending on how you filter the data, especially when considering race.</p>
         </div>
 
         <div class='step textContainer' data-step-no="pcnhwht0016">
             <h3 class='title'>Percent Change in White Population between 2000-2016 (Click to zoom in)</h3>
 
-            <p class='text'>With some exceptions, the majority of population growth among white residents has occurred in the central parts of the city. The more suburban portions of the city have seen decreases in the white population since 2000.</p>
+            <p class='subtitle'>With some exceptions, the majority of population growth among white residents has occurred in the central parts of the city. The more suburban portions of the city have seen decreases in the white population since 2000.</p>
         </div>
         <div class='step textContainer' data-step-no="pcnhblk0016">
             <h3 id='lorem-title' class='title'>Percent Change in African-American Population between 2000-2016 (Click to zoom in)</h3>
 
-            <p class='text'>This map is almost the exact inverse of the previous one, suggesting that African-American residents have been leaving and/or displaced from the central areas of Durham and relocating in the more suburban areas of the city.</p>
+            <p class='subtitle'>This map is almost the exact inverse of the previous one, suggesting that African-American residents have been leaving and/or displaced from the central areas of Durham and relocating in the more suburban areas of the city.</p>
         </div>
 
         <div id='income' class='step textContainer' data-step-no="pchinc0016a17">
             <h3 class='title'>Percent Change in Household Income between 2000 and 2016, Adjusted to 2017 Dollars (Click to zoom in)</h3>
 
-            <p class='text'>Another factor that impacts the affordability of housing is income. This map demonstrates that the central parts and most suburban areas of the city have seen income increases, while everything in between has seen stagnant or decreasing incomes.</p>
+            <p class='subtitle'>Another factor that impacts the affordability of housing is income. This map demonstrates that the central parts and most suburban areas of the city have seen income increases, while everything in between has seen stagnant or decreasing incomes.</p>
         </div>
         <div class='step textContainer' id='' data-step-no="pchincw0016a17">
             <h3 class='title'>Percent Change in Household Income for White Population between 2000 and 2016, Adjusted to 2017 Dollars (Click to zoom in)</h3>
 
-            <p class='text'>Combined with the population map, this shows that not only did white residents move to more central parts of Durham but their incomes also rose very rapidly, too.</p>
+            <p class='subtitle'>Combined with the population map, this shows that not only did white residents move to more central parts of Durham but their incomes also rose very rapidly, too.</p>
         </div>
         <div class='step textContainer' id='' data-step-no="pchincb0016a17">
             <h3 class='title'>Percent Change in Household Income for Black Population between 2000 and 2016, Adjusted to 2017 Dollars (Click to zoom in)</h3>
 
-            <p class='text'>Although African-American incomes rose in some census tracts, the majority of tracts saw median household income for African-Americans fall.</p>
+            <p class='subtitle'>Although African-American incomes rose in some census tracts, the majority of tracts saw median household income for African-Americans fall.</p>
         </div>
       </Scrollama>
     </mq-layout>
 
     <mq-layout mq='mobile'>
       <div class='mobileContainer'>
-        <h3 class='m-title'>Percent Change in Population between 2000-2016</h3>
+        <h3 id='population' class='m-title'>Percent Change in Population between 2000-2016</h3>
         <durhamMap initValue='pcpop0016'/>
         <p class='m-text'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid cumque non quaerat vitae animi? Assumenda nostrum alias corporis fugiat facilis vero ducimus, beatae aliquam, in perferendis, consectetur saepe unde velit.</p>
 

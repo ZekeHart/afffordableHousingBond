@@ -274,7 +274,7 @@ export default {
 
       let colorScale = d3.scaleSequential(d3Chromatic.interpolateRdBu)
         .domain([lo, hi])
-
+        
       this.durhamtrts.transition()
         .duration(750)
         .ease(d3.easeLinear)
@@ -294,7 +294,6 @@ export default {
       this.colorbar = this.layer.append('g')
         .attr('class', 'vertical')
         .attr('transform', 'translate(100,20)')
-
       this.colorbar.append('text').attr('x', 45 + (voptions.hi.length * 3)).attr('y', 105).text(voptions.unit)
       console.log('unit', d3Chromatic.interpolateRdBu)
       let tickspace = (hi - lo) / 4
@@ -421,5 +420,11 @@ export default {
 .tooltip:touch {
   fill: steelblue;
   fill-opacity: 0.5;
+}
+
+@media only screen and (max-width: 768px) {
+  svg {
+    left: 400px;
+  }
 }
 </style>

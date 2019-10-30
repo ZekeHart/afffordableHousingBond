@@ -1,8 +1,8 @@
 <template>
     <header class='header'>
         <div class='banner-colour'>
-            <div class='menu-btn-cnt'>
-                <button class='menu-btn' @click='showOnClick()'>Menu</button>
+            <div class='menu-btn-cnt' @click='showOnClick()'>
+                <button class='menu-btn'>Menu</button>
             </div>
             <img class='c4d-logo' 
             src='https://bean-project-screenshots.s3.amazonaws.com/c4d-wht-red.png'
@@ -158,17 +158,18 @@ $play: 'Playfair Display', serif; */
     z-index: 88;
 }
 
-.active.v-enter, .active.v-leave {
+/* .active.v-enter, .active.v-leave {
     height: 0;
     padding: 0 10px;
     opacity: 0;
-}
+} */
 .notActive {
     display: none;
 }
 
 .menu-btn-cnt {
     z-index: 99;
+    cursor: pointer;
     position: relative;
     height: inherit;
     display: flex;
@@ -244,42 +245,30 @@ $play: 'Playfair Display', serif; */
     color: #fff;
     font-size: 1rem;
     z-index: 99;
+    border-bottom: 1px #fff solid;
     font-family: 'Lato', sans-serif;
     text-transform: uppercase;
 }
 
-#pop:hover:after {
-    width: 89%;
-}
+/* .navOptions:hover:before {
+    transform: scaleX(1);
+    visibility: visible;
+} */
 
-#inc:hover:after {
-    width: 70%;
-}
-
-#hou:hover:after {
-    width: 67%;
-}
-
-#comp:hover:after {
-    width: 70%;
-}
-
-#conc:hover:after {
-    width: 74%;
-}
 .navOptions:after {
     content: "";
-    display: block;
-    width: 0;
+    position: absolute;
     height: 1px;
     bottom: 0;
-    left: 50%;
-    border-bottom: 1px solid #fff;
+    /* left: -10; */
     transition: 1s;
+    /* visibility: hidden;
+    transform: scaleX(0); */
 }
 
 .navOptions:hover {
     color: #fff;
+    position: relative;
 }
 
 .liNav {
@@ -301,16 +290,17 @@ html {
   transition: all .8s;
 }
 .fade-enter, .fade-leave-to {
-  height: 0;
+  /* height: 0; */
   padding-top: 0;
+  transform: translateY(-400px);
 }
 
-.woosh-enter-active, .woosh-leave-active {
+/* .woosh-enter-active, .woosh-leave-active {
   transition: opacity .5s ease;
 }
 .woosh-enter, .woosh-leave-to {
   opacity: 0;
-}
+} */
 
 /* test */
 
@@ -417,6 +407,10 @@ ul {
 } */
 
 @media only screen and (max-width: 768px) {
+
+    html, body {
+        overflow-x: hidden;
+    }
     .logo-cnt { 
         display: none;
     }
