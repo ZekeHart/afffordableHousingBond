@@ -211,7 +211,6 @@ $play: 'Playfair Display', serif; */
 
 .header {
     padding-bottom: 15vh;
-    background: linear-gradient(270deg, rgba(255,255,255,1) 30%, rgba(57,154,202,1) 100%);
 }
 
 .logo-cnt {

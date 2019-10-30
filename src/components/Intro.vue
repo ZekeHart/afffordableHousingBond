@@ -1,5 +1,5 @@
 <template>
-<div class="try">
+<div class="introContainer">
     <section class="intro">
         <div class="introDiv">
             <h1 class='big-title'>On November 5, you have the opportunity to take a stand and support Durham residents across the income spectrum.</h1>
@@ -18,11 +18,6 @@
 </template>
 
 <style>
-.try {
-    min-height: 85vh;
-    background: linear-gradient(270deg, rgba(255,255,255,1) 30%, rgba(57,154,202,1) 100%);
-}
-
 .scrollLink {
     color: #2d6a88;
     text-decoration-line: underline;

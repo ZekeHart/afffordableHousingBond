@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Lato|Playfair+Display:400,700&display=swap');
 
 .subtitle {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-family: 'Lato', sans-serif;
   line-height: 1.5;
 }
@@ -31,10 +31,21 @@
   margin: auto;
 }
 .title {
-  font-size: 2rem;
+  font-size: 1.1rem;
   font-weight: 400;
-  font-family: 'Playfair Display', serif;
+  /* font-family: 'Playfair Display', serif; */
   line-height: 1.5
+}
+
+.introContainer {
+  min-height: 85vh;
+  /* background: linear-gradient(270deg, rgba(255,255,255,1) 30%, rgba(57,154,202,1) 100%); */
+}
+
+.categoryTitle {
+  padding-bottom: 10vh;
+  
+  font-family: 'Playfair Display', serif;
 }
 
 @media (min-width: 800px) { 
@@ -46,6 +57,12 @@
   }
   .introDiv {
     max-width: 50%;
+  }
+  .introContainer {
+    background: linear-gradient(270deg, rgba(255,255,255,1) 30%, rgba(57,154,202,1) 100%);
+  }
+  .header {
+    background: linear-gradient(270deg, rgba(255,255,255,1) 30%, rgba(57,154,202,1) 100%);
   }
 }
 
