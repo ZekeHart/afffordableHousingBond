@@ -65,9 +65,20 @@
   max-width: 20vw;
 }
 .subtitle {
-  font-size: 1rem;
+  font-size: 1.3rem;
   font-family: 'Lato', sans-serif;
   line-height: 1.5;
+}
+
+.introDiv {
+  display: flex;
+  align-items: center;
+  min-height: 80vh;
+  padding: 3%;
+}
+
+.joey {
+  margin: auto;
 }
 
 .medium-title {
@@ -77,16 +88,46 @@
   line-height: 1.5;
 }
 .big-title {
-  font-size: 3.5rem;
+  font-size: 2rem;
   font-weight: 700;
   font-family: 'Playfair Display', serif;
   line-height: 1.5;
+  margin: auto;
 }
 .title {
-  font-size: 2rem;
+  font-size: 1.1rem;
   font-weight: 400;
-  font-family: 'Playfair Display', serif;
+  /* font-family: 'Playfair Display', serif; */
   line-height: 1.5
+}
+
+.introContainer {
+  min-height: 85vh;
+  /* background: linear-gradient(270deg, rgba(255,255,255,1) 30%, rgba(57,154,202,1) 100%); */
+}
+
+.categoryTitle {
+  padding-bottom: 10vh;
+  
+  font-family: 'Playfair Display', serif;
+}
+
+@media (min-width: 800px) { 
+  .intro {
+      display: flex;
+  }
+  .big-title {
+    font-size: 3rem;
+  }
+  .introDiv {
+    max-width: 50%;
+  }
+  .introContainer {
+    background: linear-gradient(270deg, rgba(255,255,255,1) 30%, rgba(57,154,202,1) 100%);
+  }
+  .header {
+    background: linear-gradient(270deg, rgba(255,255,255,1) 30%, rgba(57,154,202,1) 100%);
+  }
 }
 
 .scrollama-container {
