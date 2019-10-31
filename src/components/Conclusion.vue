@@ -2,25 +2,55 @@
     <section id='comparison' class="conclusion">
         <h2 class='medium-title'>NC Communities Supporting Affordable Housing</h2>
         <p class='subtitle'>Durham is not the only city to take a stand in support of affordable housing that can positively the community as a whole. Three NC communities have also rallied support for affordable housing.</p>
-        <h3 class='title'>Charlotte</h3>
+        <!-- <h3 class='title'>Charlotte</h3>
         <ul>
             <li>The Charlotte region’s population has grown by 2%+ per year since 2007</li>
             <li>The number of housing units has increased at 1.3% per year during the same time</li>
             <li>Voters passed a $50 million bond in November, 2018, to bolster the Charlotte Housing Trust Fund </li>
             <li>Three financial institutions (Bank of America, Ally Financial, and Barings) added $70 million to the fund after voters passed the measure</li>
             <li>This shows that throwing public support behind projects can entice and incentivize private-sector companies to contribute to the cause of affordability for all</li>
-        </ul>
-        <h3 class='title'>Wake County</h3>
-        <ul>
-            <li>~100,000 county households pay more than 30% of their monthly income in rent</li>
-            <li>By 2035, without intervention, the county will have a deficit of 150,000 affordable housing units</li>
-            <li>In April, 2019, Wake County leaders backed nine affordable-housing developments with a $12.6 million commitment, the county’s largest financial commitment to affordable housing to-date</li>
-        </ul>
-        <h3 class='title'>Chapel Hill</h3>
-        <ul>
-            <li>Over 50% of Chapel Hill’s residents pay 30% of their income or more on housing</li>
-            <li>In November, 2018, voters in Chapel Hill approved a $10 million affordable housing bond that will build or maintain 700 affordable housing units</li>
-        </ul>
+        </ul> -->
+        <div class='grid'>
+            <div class="grid-container">
+                <div class="pic-title-container">
+                    <h3 class='photo-txt'>Charlotte</h3>
+                </div>
+                <div class="desc">
+                    <ul class='desc-list'>
+                        <li class='li-desc'>The Charlotte region’s population has grown by 2%+ per year since 2007</li>
+                        <li class='li-desc'>The number of housing units has increased at 1.3% per year during the same time</li>
+                        <li class='li-desc'>Voters passed a $50 million bond in November, 2018, to bolster the Charlotte Housing Trust Fund </li>
+                        <li class='li-desc'>Three financial institutions (Bank of America, Ally Financial, and Barings) added $70 million to the fund after voters passed the measure</li>
+                        <li class='li-desc'>This shows that throwing public support behind projects can entice and incentivize private-sector companies to contribute to the cause of affordability for all</li>
+                    </ul> 
+                </div>
+            </div>
+
+            <div class="grid-container">
+                <div class="pic-title-container-2">
+                    <h3 class='photo-txt'>Wake County</h3>
+                </div>
+                <div class="desc">
+                    <ul class='desc-list'>
+                        <li class='li-desc'>~100,000 county households pay more than 30% of their monthly income in rent</li>
+                        <li class='li-desc'>By 2035, without intervention, the county will have a deficit of 150,000 affordable housing units</li>
+                        <li class='li-desc'>In April, 2019, Wake County leaders backed nine affordable-housing developments with a $12.6 million commitment, the county’s largest financial commitment to affordable housing to-date</li>
+                    </ul> 
+                </div>
+            </div>
+
+            <div class="grid-container">
+                <div class="pic-title-container-3">
+                    <h3 class='photo-txt'>Chapel Hill</h3>
+                </div>
+                <div class="desc">
+                    <ul class='desc-list'>
+                        <li class='li-desc'>Over 50% of Chapel Hill’s residents pay 30% of their income or more on housing</li>
+                        <li class='li-desc'>In November, 2018, voters in Chapel Hill approved a $10 million affordable housing bond that will build or maintain 700 affordable housing units</li>
+                    </ul> 
+                </div>
+            </div>
+        </div>
         <h2 class='medium-title'>
             Impacts of Affordable Housing on Communities
         </h2>
