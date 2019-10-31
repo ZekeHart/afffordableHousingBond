@@ -224,7 +224,7 @@ $play: 'Playfair Display', serif; */
 .logo {
     margin-top: 1vh;
     /* align-self: flex-end; */
-    height: 19vh;
+    height: 110px;
     border-radius: 50%;
 }
 
@@ -235,7 +235,7 @@ $play: 'Playfair Display', serif; */
     /* background-image: linear-gradient(to right, #399aca, #5442f5); */
     background-color: #399aca;
     width: 100vw;
-    height: 12vh;
+    height: 70px;
     position: fixed;
     z-index: 95;
 }
