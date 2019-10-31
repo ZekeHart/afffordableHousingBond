@@ -146,8 +146,7 @@ $play: 'Playfair Display', serif; */
 .active {
     transition: 2s;
     padding-top: 13vh;
-    width: 16vw;
-    height: 46vh;
+    width: 16%;
     position: fixed;
     display: block;
     background: #399aca;
@@ -183,6 +182,7 @@ $play: 'Playfair Display', serif; */
     margin: auto;
     align-self: center;
     z-index: 99;
+    font-size: 1.2rem;
     cursor: pointer;
     background: transparent;
     border: none;
@@ -224,7 +224,7 @@ $play: 'Playfair Display', serif; */
 .logo {
     margin-top: 1vh;
     /* align-self: flex-end; */
-    height: 19vh;
+    height: 110px;
     border-radius: 50%;
 }
 
@@ -235,7 +235,7 @@ $play: 'Playfair Display', serif; */
     /* background-image: linear-gradient(to right, #399aca, #5442f5); */
     background-color: #399aca;
     width: 100vw;
-    height: 12vh;
+    height: 70px;
     position: fixed;
     z-index: 95;
 }
