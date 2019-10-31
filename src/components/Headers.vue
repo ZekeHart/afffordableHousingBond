@@ -230,7 +230,7 @@ $play: 'Playfair Display', serif; */
 
 .banner-colour {
     display: flex;
-    filter: drop-shadow(2px 2px 2px #aec3cd);
+    filter: drop-shadow(2px 2px 2px #639bb6);
     /* align-items: center; */
     /* background-image: linear-gradient(to right, #399aca, #5442f5); */
     background-color: #399aca;
