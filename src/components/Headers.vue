@@ -14,7 +14,7 @@
                 v-scroll="handleScroll"
                 class='logo' src='https://bean-project-screenshots.s3.amazonaws.com/c4d_logo-2.png' alt='Code for Durham logo'/></a>
             </div>
-            <nav>
+            <nav class='navContainer'>
                 <ul class='ulNav'>
                     <li><a class='liItem' target=_blank rel=_noopener href='http://www.dcovotes.com/voters/voting/polling-locations'>Polling stations</a></li>
                     <li class='henlo'>|</li>
@@ -71,7 +71,7 @@ export default {
       if (window.scrollY > 50) {
         el.setAttribute(
           'style',
-          'opacity: 1; transition: all ease .5s; transform: translate3d(0, -50px, 0)'
+          'opacity: 1; transition: all ease .5s; transform: translate3d(0, -62px, 0)'
         )
       }
       return window.scrollY > 100
@@ -85,17 +85,22 @@ export default {
 /* $lato: 'Lato', sans-serif;
 $play: 'Playfair Display', serif; */
 
+.navContainer {
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .ulNav {
     display: flex;
-    margin-top: 4vh;
     margin-left: 30vh;
     list-style: none;
-    justify-content: center;
 }
 
 .liItem {
     color: #fff;
     cursor: pointer;
+    align-self: center;
     font-family: 'Lato', sans-serif;
     font-size: 1.2rem;
     text-transform: uppercase;
@@ -145,7 +150,7 @@ $play: 'Playfair Display', serif; */
 
 .active {
     transition: 2s;
-    padding-top: 13vh;
+    padding-top: 85px;
     width: 16%;
     position: fixed;
     display: block;
@@ -224,7 +229,7 @@ $play: 'Playfair Display', serif; */
 .logo {
     margin-top: 1vh;
     /* align-self: flex-end; */
-    height: 110px;
+    height: 125px;
     border-radius: 50%;
 }
 
