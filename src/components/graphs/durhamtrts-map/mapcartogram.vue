@@ -12,7 +12,7 @@ Links:
 -->
 
 <template>
-  <svg id='chart' width='490' height='540' />
+  <svg id='chart' :width='svgWidth' :height='svgHeight' />
 </template>
 
 <script>
@@ -63,13 +63,17 @@ export default {
       durhamhds: null,
       roads: null,
       layer: null,
-      colorbar: null
+      colorbar: null,
+      svgHeight: 540,
+      svgWidth: 490
     }
   },
   mounted: function () {
     var mounthis = this
     var dataById
-
+    let mql = window.matchMedia('(max-width: 800px)')
+    console.log(mql)
+    console.log(mql.matches)
     // console.log(mounthis.initValue)
     mounthis.cartogram = d3Cartogram.d3.cartogram()
       .projection(projection)
@@ -271,7 +275,6 @@ export default {
       }
       let lo = Math.max(parseFloat(voptions.lo), -100)
       let hi = Math.min(parseFloat(voptions.hi), 100)
-
       let colorScale = d3.scaleSequential(d3Chromatic.interpolateRdBu)
         .domain([lo, hi])
       this.durhamtrts.transition()
