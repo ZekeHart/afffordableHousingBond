@@ -71,10 +71,14 @@ export default {
   mounted: function () {
     var mounthis = this
     var dataById
-    let mql = window.matchMedia('(max-width: 800px)')
+    let mql = window.matchMedia('(max-width: 500px)')
     console.log(mql)
     console.log(mql.matches)
-    // console.log(mounthis.initValue)
+    if (mql.matches) {
+      // this.svgHeight = 270
+      this.svgWidth = 400
+    }
+
     mounthis.cartogram = d3Cartogram.d3.cartogram()
       .projection(projection)
       .properties(function (d) {
